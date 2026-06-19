@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<!--
+=======================================================================
+READABULL DASHBOARD TEMPLATE
+=======================================================================
+INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
+
+1. NEVER use em dashes (— or &mdash;) anywhere in this document.
+   Use commas, colons, or rewrite the sentence instead.
+
+2. Every {{PLACEHOLDER}} must be replaced with real content.
+   Do not leave any placeholder unfilled.
+
+3. Do NOT change any CSS, layout, structure, or class names.
+   Only replace placeholder values.
+
+4. STEP 1 KEYWORDS: Always open with "If you have not already done so..."
+   Reference the PRIMARY KEYWORD by name in the third bullet point.
+   Do not say "use the recommended keywords" generically.
+
+5. STEP 2 COMPETING BOOKS: Reference the actual competitor book titles
+   from the audit by name. Do not give generic advice.
+
+6. STEP 3 REVIEWS:
+   - If author has 0 reviews: heading = "Get Some Ratings and Reviews"
+   - If author already has reviews: heading = "Keep Getting Fresh Ratings and Reviews"
+   - Always include the point that fresh positive reviews carry real
+     weight even against books with hundreds of reviews. Amazon values
+     recency, not just volume.
+
+7. STEP 4 HARDBACK:
+   - If author already has a hardback edition: SKIP this step entirely.
+   - If no hardback: include the step as normal.
+
+8. QUICK WINS: Reference the primary keyword by name.
+   Say "Add [PRIMARY KEYWORD] to your keyword fields" not generic advice.
+
+9. AMAZON ADS: Frame as optional but highly recommended once previous
+   steps are complete. Not a hard sell.
+
+10. No em dashes. Ever. Not in any placeholder content you write.
+=======================================================================
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Opportunity Audit - Hurricane Helene: Resiliency After The Storm Part One</title>
+<style>
+  :root {
+    --teal:     #00B5AD;
+    --teal-l:   #E0F7F6;
+    --teal-d:   #007A75;
+    --orange:   #F47421;
+    --orange-l: #FFF0E6;
+    --orange-d: #C05A10;
+    --navy:     #1B3A48;
+    --mid:      #4A6070;
+    --muted:    #7A909E;
+    --light:    #F5F7F8;
+    --border:   #DDE3E7;
+    --white:    #FFFFFF;
+    --black:    #111111;
+    --red:      #C62828;
+    --red-l:    #FFEBEE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #ECEEF0;
+    color: var(--black);
+    line-height: 1.6;
+    font-size: 13px;
+  }
+
+  /* HEADER */
+  .hdr { background: var(--navy); color: #fff; padding: 40px 56px 32px; border-bottom: 4px solid var(--teal); }
+  .hdr-meta { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+  .hdr h1 { font-size: 30px; font-weight: 700; color: #fff; letter-spacing: -.3px; margin-bottom: 4px; }
+  .hdr h2 { font-size: 15px; color: var(--orange); font-weight: 400; margin-bottom: 18px; }
+  .hdr-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .hdr-pill { display: inline-block; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.75); padding: 5px 18px; border-radius: 3px; font-size: 14px; }
+  .hdr-pill.accent { background: var(--orange); border-color: var(--orange); color: #fff; font-weight: 400; }
+
+  /* LAYOUT */
+  .wrap { max-width: 1260px; margin: 0 auto; padding: 40px 32px; }
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .mb { margin-bottom: 24px; }
+  .mb-sm { margin-bottom: 14px; }
+
+  /* SECTION LABEL */
+  .sec-label { font-size: 14px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin: 40px 0 16px; display: flex; align-items: center; gap: 12px; }
+  .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* CARDS */
+  .card { background: var(--white); border-radius: 6px; padding: 28px 32px; border: 1px solid var(--border); }
+  .card-hdr { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .card-title { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 10px; line-height: 1.3; }
+
+  /* SCORE */
+  .score-panel { background: var(--navy); border-radius: 6px; padding: 32px; }
+  .score-eyebrow { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
+  .score-num { font-size: 80px; font-weight: 900; color: var(--teal); line-height: 1; }
+  .score-denom { font-size: 28px; color: var(--orange); font-weight: 300; }
+  .score-verdict { font-size: 18px; font-weight: 600; color: #fff; margin-top: 8px; }
+  .score-range { display: inline-block; margin-top: 10px; background: rgba(0,181,173,.12); border: 1px solid rgba(0,181,173,.3); color: #fff; padding: 4px 16px; border-radius: 3px; font-size: 11px; font-weight: 400; letter-spacing: 1px; }
+  .bar-row { margin-top: 28px; }
+  .bar-item { margin-bottom: 13px; }
+  .bar-item:last-child { margin-bottom: 0; }
+  .bar-meta { display: flex; justify-content: space-between; margin-bottom: 5px; }
+  .bar-lbl { font-size: 12px; color: rgba(255,255,255,.7); }
+  .bar-val { font-size: 12px; font-weight: 700; color: rgba(255,255,255,.9); }
+  .bar-track { height: 6px; background: rgba(255,255,255,.1); border-radius: 3px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 3px; }
+
+  /* STAT STRIP */
+  .stat-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 20px; }
+  .stat-cell { background: var(--white); padding: 16px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .stat-cell > div:last-child { margin-top: auto; padding-top: 6px; }
+  .stat-v { font-size: 20px; font-weight: 800; color: var(--orange); }
+  .stat-l { font-size: 12px; color: var(--mid); margin-top: 3px; }
+
+  /* BADGES */
+  .badge { display: inline-block; padding: 3px 9px; border-radius: 3px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; }
+  .b-teal   { background: var(--teal-l);   color: var(--teal-d); }
+  .b-orange { background: var(--orange-l); color: var(--orange-d); }
+  .b-navy   { background: rgba(27,58,72,.08); color: var(--navy); }
+  .b-muted  { background: var(--light);    color: var(--muted); }
+
+  /* ITEMS */
+  .item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+  .item:last-child { margin-bottom: 0; }
+  .item-icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+  .icon-teal   { background: var(--teal-l);   color: var(--teal-d); }
+  .icon-orange { background: var(--orange-l); color: var(--orange-d); }
+  .icon-navy   { background: rgba(27,58,72,.08); color: var(--navy); }
+  .item-t { font-size: 15px; font-weight: 700; color: var(--teal-d); margin-bottom: 3px; }
+  .item-b { font-size: 12px; color: var(--mid); line-height: 1.6; }
+
+  /* CALLOUTS */
+  .callout { border-left: 3px solid var(--teal); background: var(--teal-l); padding: 14px 18px; border-radius: 0 4px 4px 0; font-size: 12px; color: var(--navy); line-height: 1.65; }
+  .callout-orange { border-left-color: var(--orange); background: var(--orange-l); }
+  .callout strong { color: var(--black); }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { background: var(--navy); color: rgba(255,255,255,.85); padding: 9px 12px; text-align: left; font-weight: 600; font-size: 10px; letter-spacing: .5px; text-transform: uppercase; }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--border); color: var(--mid); }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: var(--light); }
+  .tc { text-align: center; } .tr { text-align: right; }
+
+  /* KW PILLS */
+  .kw { display: inline-block; background: var(--teal-l); color: var(--teal-d); border: 1px solid rgba(0,181,173,.2); border-radius: 3px; padding: 3px 10px; font-size: 11px; font-weight: 600; margin: 3px; }
+  .kw span { color: var(--teal-d); font-weight: 700; }
+
+  /* STEPS */
+  .step { display: flex; gap: 16px; align-items: flex-start; padding: 18px 20px; border-radius: 4px; margin-bottom: 10px; }
+  .step:last-child { margin-bottom: 0; }
+  .step-teal   { background: var(--teal-l);   border-left: 4px solid var(--teal); }
+  .step-orange { background: var(--orange-l); border-left: 4px solid var(--orange); }
+  .step-num { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; flex-shrink: 0; color: #fff; }
+  .num-teal   { background: var(--teal); }
+  .num-orange { background: var(--orange); }
+  .step-t { font-size: 13px; font-weight: 700; color: var(--black); margin-bottom: 4px; }
+  .step-b { font-size: 12px; color: var(--mid); line-height: 1.55; }
+
+  /* BANNER */
+  .banner { background: var(--navy); color: #fff; border-radius: 6px; padding: 24px 32px; margin-bottom: 24px; }
+  .banner h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--teal); }
+  .banner p  { font-size: 12px; color: var(--orange); line-height: 1.65; }
+  .banner-stat { display: inline-block; background: var(--teal); border: 1px solid var(--teal-d); color: #fff; padding: 8px 18px; border-radius: 3px; font-size: 14px; font-weight: 400; margin: 8px 6px 0 0; }
+
+  /* HARDBACK CARD */
+  .hb-card { background: var(--white); border: 1px solid var(--border); border-top: 4px solid var(--teal); border-radius: 6px; padding: 28px 32px; margin-bottom: 24px; }
+  .hb-eyebrow { font-size: 18px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-d); margin-bottom: 8px; }
+
+  /* ACTION REQUIRED */
+  .action-required { background: var(--red); color: #fff; border-radius: 6px; padding: 24px 32px; margin-top: 32px; display: flex; gap: 20px; align-items: flex-start; }
+  .ar-icon  { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+  .ar-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 5px; }
+  .ar-body  { font-size: 12px; color: rgba(255,255,255,.85); line-height: 1.65; }
+
+  /* FOOTER */
+  .ftr { background: var(--navy); color: rgba(255,255,255,.35); text-align: center; padding: 22px; font-size: 11px; }
+
+  @media(max-width:900px){
+    .g2{ grid-template-columns:1fr; }
+    .hdr{ padding:24px 20px; }
+    .wrap{ padding:24px 16px; }
+    .score-num{ font-size:56px; }
+  }
+  @media(max-width:600px){
+    html,body{ overflow-x:hidden; }
+    .hdr{ padding:16px; }
+    .hdr h1{ font-size:22px; }
+    .hdr h2{ font-size:13px; }
+    .hdr-pill{ font-size:12px; padding:4px 12px; }
+    .wrap{ padding:16px 12px; }
+    .g2{ grid-template-columns:1fr; gap:14px; }
+    .card{ padding:18px 16px; }
+    .score-panel{ padding:20px 16px; }
+    .score-num{ font-size:48px; }
+    .score-denom{ font-size:20px; }
+    .score-verdict{ font-size:15px; }
+    .stat-strip{ grid-template-columns:1fr; }
+    .stat-cell{ padding:12px; }
+    .site-nav a{ font-size:11px; padding:7px 10px; }
+    .site-nav{ gap:6px; padding:8px 10px; }
+    .hb-eyebrow{ font-size:14px; }
+    .step{ padding:12px 14px; }
+    .banner-stat{ font-size:12px; padding:6px 12px; }
+    .item-t{ font-size:13px; }
+    .sec-label{ font-size:11px; }
+    table{ font-size:11px; }
+    th,td{ padding:7px 8px; }
+  }
+
+  .tip { position: relative; display: inline-flex; align-items: center; gap: 5px; }
+  .tip-q { width: 14px; height: 14px; border-radius: 50%; background: rgba(255,255,255,.15); color: rgba(255,255,255,.55); font-size: 8px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; cursor: default; flex-shrink: 0; }
+  .tip-box { display: none; position: absolute; left: 0; bottom: calc(100% + 8px); background: #fff; color: #1B3A48; font-size: 11px; line-height: 1.55; padding: 9px 12px; border-radius: 4px; width: 210px; box-shadow: 0 4px 20px rgba(0,0,0,.25); z-index: 100; pointer-events: none; }
+  .tip-box::after { content: ''; position: absolute; top: 100%; left: 8px; border: 5px solid transparent; border-top-color: #fff; }
+  .tip:hover .tip-box { display: block; }
+
+  /* FLOATING NAV */
+  body { padding-top:116px; }
+  .site-nav { position:fixed; top:0; left:0; right:0; z-index:200; background:#00B5AD; border-bottom:none; display:flex; justify-content:center; gap:10px; padding:10px 20px; overflow-x:auto; }
+  .site-nav a { display:inline-flex; align-items:center; color:#fff; font-size:13px; font-weight:400; letter-spacing:.4px; padding:10px 16px; text-decoration:none; border:1px solid rgba(255,255,255,.6); white-space:nowrap; transition:color .15s,background .15s; flex-shrink:0; background:rgba(0,0,0,.15); border-radius:4px; }
+  .site-nav a:hover { background:rgba(0,0,0,.25); }
+  .site-nav a.active { font-weight:700; background:rgba(255,255,255,.25); border-color:#fff; }
+  [id] { scroll-margin-top:120px; }
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-meta">Book Opportunity Audit &nbsp;&middot;&nbsp; June 2026 &nbsp;&middot;&nbsp; Confidential</div>
+  <h1>Hurricane Helene: Resiliency After The Storm Part One</h1>
+  <h2>A documentary account of survival and rebuilding after the storm that devastated Western North Carolina</h2>
+  <div class="hdr-pills">
+    <span class="hdr-pill">Author: Rebecca Wells Phillips</span>
+    <span class="hdr-pill">Format: Paperback and Hardback</span>
+    <span class="hdr-pill">Niche: Disaster Nonfiction</span>
+    <span class="hdr-pill accent">Score: 46 / 100 - Developing Opportunity</span>
+  </div>
+</div>
+<div style="position:fixed;top:0;left:0;right:0;z-index:201;background:#1B3A48;height:58px;"></div>
+<nav class="site-nav" style="top:58px;">
+  <a href="#score"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Opportunity Score</a>
+  <a href="#marketing"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Marketing Strategy</a>
+  <a href="#market"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Market Analysis</a>
+  <a href="#competitors"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Competitors</a>
+  <a href="#keywords"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Keywords</a>
+  <a href="#quick-wins"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Quick Wins</a>
+</nav>
+
+<div class="wrap" id="score">
+
+<!-- SCORE + SUMMARY -->
+<div class="g2 mb">
+  <div class="score-panel">
+    <div style="display:flex;gap:24px;align-items:center;margin-bottom:20px;">
+      <div style="flex:1;min-width:0;">
+        <div class="score-eyebrow">Author Opportunity Score</div>
+        <div><span class="score-num">46</span><span class="score-denom">&thinsp;/ 100</span></div>
+        <div class="score-verdict">Developing Opportunity</div>
+        <div class="score-range">40 to 59 Range</div>
+      </div>
+      <div style="flex-shrink:0;">
+        <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1754076664i/239605191.jpg" alt="Hurricane Helene: Resiliency After The Storm Part One" style="width:130px;border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.5);display:block;">
+      </div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-item">
+        <div class="bar-meta"><span class="bar-lbl tip">Demand <span class="tip-q">?</span><span class="tip-box">How much buyer demand exists for this niche on Amazon, based on the number of books actively selling and estimated monthly revenue.</span></span><span class="bar-val">13 / 20</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--teal);"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-meta"><span class="bar-lbl tip">Competition <span class="tip-q">?</span><span class="tip-box">How competitive this niche is on Amazon. Lower scores mean less competition and more room to rank. Higher scores mean a more crowded niche.</span></span><span class="bar-val">13 / 20</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--teal);"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-meta"><span class="bar-lbl tip">Reviews <span class="tip-q">?</span><span class="tip-box">The number of verified customer reviews your book currently has. Reviews build trust and are one of the biggest drivers of Amazon sales conversions.</span></span><span class="bar-val">10 / 20</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--orange);"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-meta"><span class="bar-lbl tip">Growth Potential <span class="tip-q">?</span><span class="tip-box">How ready your book is to expand your catalogue, factoring in current reviews, ad activity, and the number of additional titles possible in this niche.</span></span><span class="bar-val">10 / 20</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--teal);"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-meta"><span class="bar-lbl tip">Amazon Ads <span class="tip-q">?</span><span class="tip-box">An Amazon ad campaign will help you sell more books. We recommend having at least 5 reviews before running ads, as reviews significantly improve conversion rates.</span></span><span class="bar-val">Not Active - Ready to Launch</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:0%;"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:20px;">
+    <div class="card">
+      <div class="card-hdr">Book Summary</div>
+      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:20px;"><em><strong style="font-style:italic;font-weight:400;">Hurricane Helene: Resiliency After the Storm Part One</strong> documents the real experiences of survivors before, during, and after the storm struck Western North Carolina on September 27, 2024. Built on original research and months of interviews, it captures what living through this disaster actually felt like. A portion of all proceeds goes directly to victims.</em><br><br><strong>Searches for &ldquo;hurricane helene book&rdquo; are finding a low-competition niche with real demand. Fewer than 20 books compete directly for that keyword and the top competitor has just 14 reviews. The barrier to entry is unusually low.</strong></p>
+      <div class="stat-strip">
+        <div class="stat-cell"><div class="stat-v">10+</div><div class="stat-l">Books Selling Well In This Niche</div><div><span style="display:inline-block;margin-top:6px;font-size:11px;background:#e0f7f4;color:#007A75;padding:2px 12px;border-radius:20px;font-weight:700;">✓ Low Competition</span></div></div>
+        <div class="stat-cell"><div class="stat-v">~$4.5K</div><div class="stat-l">KDP Niche Revenue</div><div><span style="display:inline-block;margin-top:6px;font-size:11px;background:#e0f7f4;color:#007A75;padding:2px 12px;border-radius:20px;font-weight:700;">✓ Real Demand</span></div></div>
+        <div class="stat-cell"><div class="stat-v">Nonfiction</div><div class="stat-l">Content Type</div><div><span style="display:inline-block;margin-top:6px;font-size:11px;background:#e0f7f4;color:#007A75;padding:2px 12px;border-radius:20px;font-weight:700;">✓ Stays Relevant</span></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr">Professional Assessment</div>
+      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:14px;">Buyers searching for &ldquo;hurricane helene book&rdquo; on Amazon are finding a niche with real demand and almost no competition. The top competing title has just 14 reviews and is generating an estimated $1,028 per month. Your five-star average across 18 reviews confirms that readers who find your book respond strongly to it.<br><br>The challenge is not quality. It is visibility. Your keyword fields need loading, and a modest ad campaign would put your book in front of buyers who are already searching for it. Full keyword loading and a $5 per day auto campaign could shift your performance within weeks.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span class="badge b-teal">5-Star Rating</span>
+        <span class="badge b-teal">Three Formats Live</span>
+        <span class="badge b-teal">A+ Content</span>
+        <span class="badge b-teal">Series Planned</span>
+        <span class="badge b-teal">Charity Proceeds Angle</span>
+        <span class="badge b-orange">Keywords Not Loaded</span>
+        <span class="badge b-orange">No Ads Active</span>
+        <span class="badge b-orange">Pricing Worth Reviewing</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- KEY FINDING BANNER -->
+<div class="banner mb">
+  <h3 style="color:var(--orange);">Low Competition, Real Demand: A Winnable Niche</h3>
+  <p style="color:#fff;">Fewer than 20 books compete directly for &ldquo;hurricane helene book&rdquo; on Amazon, and the top competitor has just 14 reviews. This is a genuinely low-competition niche with real buyer demand. The keyword is under-contested for its search volume. Loading it into your KDP account is the single highest-impact free action available to this book right now.</p>
+  <div>
+    <span class="banner-stat">Top Competitor: 14 Reviews</span>
+    <span class="banner-stat">Niche Revenue: ~$4.5K/mo</span>
+    <span class="banner-stat">Primary Keyword: Low Competition</span>
+  </div>
+</div>
+
+<!-- MARKETING STRATEGY -->
+<div id="marketing" style="position:relative;top:-48px;"></div>
+<div class="sec-label">Marketing Strategy</div>
+
+<!-- STEP 1: KEYWORDS -->
+<div class="card mb">
+  <div class="hb-eyebrow">Step 1 - Add Your Keywords to KDP</div>
+  <p style="font-size:15px;color:var(--mid);line-height:1.7;margin-bottom:16px;">If you have not already done so, adding the right keywords to your KDP listing is one of the highest-impact actions you can take. Amazon uses your keywords to decide which searches your book appears in. Without them, your book is invisible to buyers who are actively looking for what you have written.</p>
+  <div style="background:var(--navy);border-radius:4px;padding:12px 18px;margin-bottom:20px;display:flex;align-items:center;gap:14px;">
+    <span style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);white-space:nowrap;">Target Keyword #1</span>
+    <span style="font-size:16px;font-weight:700;color:var(--teal);letter-spacing:.3px;">hurricane helene book</span>
+    <span style="font-size:11px;color:rgba(255,255,255,.55);margin-left:auto;">Low Competition &middot; High Demand &middot; Enter First in KDP</span>
+  </div>
+  <div class="item">
+    <div class="item-icon icon-orange">&#10003;</div>
+    <div>
+      <div class="item-t">Lead with &ldquo;hurricane helene book&rdquo; in field one</div>
+      <div class="item-b">This is your #1 target. It is actively searched, directly relevant, and under-contested for its demand level. Make it the very first entry in your KDP keyword list. Then fill all remaining six fields with the supporting terms from the Keywords section of this audit.</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-icon icon-orange">&#10003;</div>
+    <div>
+      <div class="item-t">Use all 7 keyword fields</div>
+      <div class="item-b">KDP gives you 7 keyword fields, each supporting up to 50 characters. Use every one. Think about how your reader searches, not how you would describe your book. Phrases like &ldquo;hurricane helene survivor stories&rdquo; or &ldquo;Western North Carolina flood recovery&rdquo; are more valuable than broad single words.</div>
+    </div>
+  </div>
+  <div class="item" style="margin-bottom:0;">
+    <div class="item-icon icon-orange">&#10003;</div>
+    <div>
+      <div class="item-t">What not to do</div>
+      <div class="item-b">Do not repeat words already in your title or subtitle. Do not use competitor names, celebrity names, or misleading terms. Amazon has tightened its algorithm and listings with irrelevant or manipulative keywords risk being suppressed. Keep them accurate and specific.</div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:20px;"><span style="font-size:28px;color:#F47421;line-height:1;">&#8595;</span></div>
+</div>
+
+<!-- STEP 2: COMPETITOR ANALYSIS -->
+<div class="card mb">
+  <div class="hb-eyebrow">Step 2 - Analyse Your Competing Books</div>
+  <p style="font-size:15px;color:var(--mid);line-height:1.7;margin-bottom:16px;">Before promoting your book, understand what you are up against. The best-selling books in your niche are bestsellers for a reason. Study them and use what you learn to make your own listing, content, and positioning stronger.</p>
+  <div class="item">
+    <div class="item-icon icon-orange">&#10003;</div>
+    <div>
+      <div class="item-t">Focus on the top two performers</div>
+      <div class="item-b"><em>A River Runs Through It: The Story of Hurricane Helene, Chimney Rock, NC</em> (BSR 85,957) and <em>Mountain Tsunami II: True Flood Stories of Hurricane Helene&rsquo;s Historic Havoc</em> (BSR 127,371) are the two books earning the most consistently. Both are priced at $17 to $18. Study their covers, descriptions, and category selections carefully.</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-icon icon-orange">&#10003;</div>
+    <div>
+      <div class="item-t">Read the reviews on all competitors carefully</div>
+      <div class="item-b"><em>The Day the Mountains Cried</em> has 266 reviews at BSR 531,144. That many reviews without a strong BSR suggests emotional engagement without consistent conversion. Patterns like this reveal what readers want and where competing books fall short. Look for gaps you can fill in your own listing and content.</div>
+    </div>
+  </div>
+  <div class="item" style="margin-bottom:0;">
+    <div class="item-icon icon-orange">&#10003;</div>
+    <div>
+      <div class="item-t">Buy the top performers if you can</div>
+      <div class="item-b">Reading the competition is an investment, not an expense. Look at their sample pages, table of contents, and structure. Understanding why they sell is the fastest way to produce something that competes with them.</div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:20px;"><span style="font-size:28px;color:#F47421;line-height:1;">&#8595;</span></div>
+</div>
+
+<!-- STEP 3: REVIEWS -->
+<div class="card mb">
+  <div class="hb-eyebrow">Step 3 - Keep Getting Fresh Ratings and Reviews</div>
+  <p style="font-size:15px;color:var(--mid);line-height:1.7;margin-bottom:14px;">Amazon distinguishes between ratings and reviews. A rating is simply a star score with no written comment, while a review includes written feedback alongside the stars. Both count towards your overall star rating and help your book appear credible to buyers, but written reviews carry more weight because they give shoppers context and confidence.</p>
+  <p style="font-size:15px;color:var(--mid);line-height:1.7;margin-bottom:16px;">You already have 18 reviews averaging five stars. That is a strong foundation. The priority now is volume: getting to 40 to 50 combined ratings and reviews. Fresh positive reviews carry real weight even against books with hundreds, because Amazon values recency as well as volume.</p>
+  <div class="item">
+    <div class="item-icon icon-orange">&#10003;</div>
+    <div>
+      <div class="item-t">Ask for a rating or review inside your book</div>
+      <div class="item-b">Add a short, genuine request at the back of your book asking readers to leave a rating or review if they found it useful. Also add one in the middle of the book as many readers never reach the final pages. Keep it natural and never ask for a 5-star review specifically as Amazon takes a dim view of this and readers find it off-putting.</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-icon icon-orange">&#10003;</div>
+    <div>
+      <div class="item-t">Aim for 40 to 50 ratings and reviews</div>
+      <div class="item-b">Social proof is the single most important factor in converting browsers into buyers on Amazon. Aim for 40 to 50 combined ratings and reviews before you expect consistent organic sales. Do not launch Amazon Ads until you have at least 5 on the specific format you plan to advertise, as a listing without social proof will waste your budget.</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-icon icon-orange">&#10003;</div>
+    <div>
+      <div class="item-t">Use an ARC service to reach readers before your next launch</div>
+      <div class="item-b">ARC (Advance Review Copy) services such as BookSirens and Hidden Gems connect authors with readers who have opted in to receive free books in exchange for honest reviews. These services are legitimate, widely used, and fully compliant with Amazon&rsquo;s terms of service. Consider running an ARC campaign for Part Two well ahead of its publication date so it arrives on Amazon with social proof already in place.</div>
+    </div>
+  </div>
+  <div class="item" style="margin-bottom:0;">
+    <div class="item-icon icon-orange">&#10003;</div>
+    <div>
+      <div class="item-t">Promote to communities where your readers already gather</div>
+      <div class="item-b">Facebook groups for Hurricane Helene survivors, Western NC community organisations, and women&rsquo;s resilience communities are natural homes for this book. The charity donation angle is a genuine conversation starter that earns organic shares without feeling promotional. Local news outlets and regional publications covering storm recovery are also worth approaching for coverage.</div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:20px;"><span style="font-size:28px;color:#F47421;line-height:1;">&#8595;</span></div>
+</div>
+
+<!-- STEP 4: HARDBACK - SKIPPED: author already has a hardback edition -->
+
+<!-- STEP 5: SENSE CHECK -->
+<div class="card mb" style="border-left:4px solid var(--teal);">
+  <div class="hb-eyebrow">Step 4 - Sense Check Before You Spend</div>
+  <p style="font-size:15px;color:var(--mid);line-height:1.7;">This is not a new niche. There are already books in the disaster nonfiction space earning hundreds of dollars a month. Before spending on ads, confirm your keyword fields are fully loaded and you have at least 5 reviews on the format you plan to advertise. If not, go back and address those points first.<br><br><strong>Spending money on ads for a listing that is not ready is the fastest way to lose your budget.</strong></p>
+  <div style="text-align:center;margin-top:20px;"><span style="font-size:28px;color:#F47421;line-height:1;">&#8595;</span></div>
+</div>
+
+<!-- STEP 6: AMAZON ADS -->
+<div class="card mb">
+  <div class="hb-eyebrow">Step 5 - Amazon Advertising</div>
+  <p style="font-size:15px;color:var(--mid);line-height:1.7;margin-bottom:14px;">Once you have reviews and confidence in your listing, Amazon Sponsored Products advertising can become one of the most effective and rewarding revenue channels available to a self-published author. The principle is straightforward: you invest a controlled daily budget, and if your campaign is optimised correctly, every dollar you spend returns more than a dollar in royalties.</p>
+  <p style="font-size:15px;color:var(--mid);line-height:1.7;margin-bottom:14px;">Unlike most forms of marketing, Amazon Ads are directly measurable. You can see exactly what you are spending, what is converting, and what your return is in real time. This means you can forecast your sales with a level of precision that most businesses can only dream of.</p>
+  <p style="font-size:15px;color:var(--mid);line-height:1.7;margin-bottom:16px;font-weight:700;">There is real risk in getting it wrong, so seek support if you are unsure. Start with a budget of $5 to $10 per day, test the data, and only scale what is demonstrably working.</p>
+  <div class="item">
+    <div class="item-icon icon-orange">&#10003;</div>
+    <div>
+      <div class="item-t">Understand your ACoS</div>
+      <div class="item-b">ACoS stands for Advertising Cost of Sale, the percentage of each sale that goes towards your ad spend. If your book earns $5 in royalties and you spend $2 on ads to make that sale, your ACoS is 40%. A target ACoS of 30 to 40% is a solid benchmark for KDP books.</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-icon icon-orange">&#10003;</div>
+    <div>
+      <div class="item-t">Optimise before you scale</div>
+      <div class="item-b">Pause keywords that spend without converting. Lower bids on high-ACoS terms. Increase bids on what is working. Do not increase your budget until your ACoS is consistently within your target range.</div>
+    </div>
+  </div>
+  <div class="item" style="margin-bottom:0;">
+    <div class="item-icon icon-orange">&#10003;</div>
+    <div>
+      <div class="item-t">Scale what works</div>
+      <div class="item-b">Once you find a profitable ACoS that holds consistently, increase your daily budget with confidence. Every dollar you put in returns more than a dollar in royalties. The ceiling is not your budget. It is the total demand for books in your niche.</div>
+    </div>
+  </div>
+</div>
+
+<!-- STRENGTHS + GROWTH -->
+<div id="market" style="position:relative;top:-48px;"></div>
+<div class="sec-label">Market Analysis</div>
+<div class="g2 mb">
+  <div class="card">
+    <div class="card-hdr">What Is Working Well</div>
+    <div class="item">
+      <div class="item-icon icon-orange">&#10003;</div>
+      <div>
+        <div class="item-t">Five-Star Reader Response</div>
+        <div class="item-b">18 reviews averaging five stars in a highly specific event niche is a strong early signal. Readers who find this book are moved by it. The content is not the problem. This is a visibility and positioning challenge.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon icon-orange">&#10003;</div>
+      <div>
+        <div class="item-t">Three Formats Already Live</div>
+        <div class="item-b">Kindle, paperback, and hardback are all available. Having all three on the same listing gives buyers a choice and increases conversion probability regardless of format preference.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon icon-orange">&#10003;</div>
+      <div>
+        <div class="item-t">The Charity Angle Creates Earned Media</div>
+        <div class="item-b">Donating a portion of proceeds to Hurricane Helene victims is a genuine differentiator. It gives journalists, community organisations, and social media pages a reason to share the book beyond a standard promotion.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hdr">Growth Opportunities</div>
+    <div class="item">
+      <div class="item-icon icon-orange">&rarr;</div>
+      <div>
+        <div class="item-t">Load Your Keyword Fields: the Highest-Impact Free Action</div>
+        <div class="item-b">Loading &ldquo;hurricane helene book&rdquo; and supporting terms into all seven KDP keyword fields takes 10 minutes and could shift organic reach within days of Amazon re-indexing. This is free, immediate, and could have a bigger impact than any paid campaign.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon icon-orange">&rarr;</div>
+      <div>
+        <div class="item-t">Publish Part Two to Create Catalogue Momentum</div>
+        <div class="item-b">A buyer of Part One is the most qualified buyer of Part Two. Two titles in a series generate cross-traffic that a standalone title cannot match. Start planning Part Two now with an ARC review strategy ahead of launch.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon icon-teal">&uarr;</div>
+      <div>
+        <div class="item-t">Expand into the Resilience Memoir Category</div>
+        <div class="item-b">The broader &ldquo;books on resilience for women&rdquo; category is significantly larger and more evergreen than the Helene-specific niche. The content qualifies. Targeting it through keywords and categories could significantly expand reach as the news cycle moves on.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPETITORS -->
+<div id="competitors" style="position:relative;top:-48px;"></div>
+<div class="sec-label">Competitors</div>
+<div class="card mb">
+  <div class="g2" style="gap:32px;align-items:start;">
+    <div>
+      <div class="card-hdr">Hurricane Helene Niche: A Winnable Market</div>
+      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:14px;">The key competitive signal in this niche: the top book has just 14 reviews at BSR 85,957. In most Amazon niches, breaking into the top tier requires hundreds of reviews. Here it requires fewer than 20. That is an unusually low barrier and it makes this niche winnable with focused effort.</p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:14px;">Rebecca&rsquo;s content is strong enough to compete at this level. The five-star average across 18 reviews confirms that readers who find this book respond to it. The issues are price, keyword visibility, and the absence of a paid traffic campaign.</p>
+      <div class="callout">
+        <strong>The opportunity:</strong> full keyword loading and a $5 per day auto campaign could bring this book into the top performers in the niche within 60 days. The top competitor has 14 reviews. Rebecca has 18. The content is ready. The listing needs loading.
+      </div>
+    </div>
+    <div>
+      <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:12px;">Competitor Revenue: Hurricane Helene Niche</p>
+      <table style="margin-bottom:12px;">
+        <thead><tr><th>Book</th><th class="tc">BSR</th><th class="tr">Rev / Mo</th><th class="tc">Reviews</th></tr></thead>
+        <tbody>
+          <tr><td>A River Runs Through It: The Story of Hurricane Helene, Chimney Rock, NC</td><td class="tc">85,957</td><td class="tr">$1,028/mo</td><td class="tc">14</td></tr>
+          <tr><td>Mountain Tsunami II: True Flood Stories of Hurricane Helene&rsquo;s Historic Havoc</td><td class="tc">127,371</td><td class="tr">$684/mo</td><td class="tc">16</td></tr>
+          <tr><td>The Deep End of Hope in the Wake of Hurricane Helene</td><td class="tc">150,295</td><td class="tr">$736/mo</td><td class="tc">58</td></tr>
+          <tr><td>Stronger Than The Storm: Hurricane Helene in Western North Carolina</td><td class="tc">323,077</td><td class="tr">$243/mo</td><td class="tc">12</td></tr>
+          <tr><td>The Day The Mountains Cried</td><td class="tc">531,144</td><td class="tr">$153/mo</td><td class="tc">266</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:10px;color:var(--muted);font-style:italic;">BSR and revenue estimates based on research at time of audit. Revenue calculated using standard KDP BSR-to-sales benchmarks. All prices are paperback unless otherwise noted.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CATALOGUE EXPANSION OPPORTUNITY -->
+<div class="sec-label">Catalogue Expansion Opportunity</div>
+<div class="card mb" style="border-top:4px solid var(--orange);">
+  <div class="g2" style="gap:32px;align-items:start;">
+    <div>
+      <div class="card-hdr">Series and Resilience Memoir: The Next Revenue Layer</div>
+      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:14px;">Beyond the Helene-specific niche, there is a significantly larger evergreen opportunity in the resilience memoir category. &ldquo;Books on resilience for women&rdquo; and &ldquo;inspirational true stories books&rdquo; are searched year-round, independent of any single weather event. The content already qualifies for this audience.</p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:14px;">The &ldquo;Part One&rdquo; framing is also a commercial asset. Every reader of Part One is a pre-qualified buyer for Part Two. A series generates cross-traffic that compounds over time. Start planning Part Two now and arrive at that launch with an ARC strategy already running.</p>
+      <div class="callout callout-orange">
+        <strong>Recommended next steps:</strong> Part Two of the series for immediate catalogue momentum, followed by a broader resilience title targeting the women&rsquo;s nonfiction audience for long-term evergreen revenue.
+      </div>
+    </div>
+    <div>
+      <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:12px;">Catalogue Expansion: Suggested Titles</p>
+      <table style="margin-bottom:16px;">
+        <thead><tr><th>Potential Title</th><th class="tc">Audience</th><th class="tr">Type</th><th class="tc">Priority</th></tr></thead>
+        <tbody>
+          <tr><td>Hurricane Helene: Resiliency After the Storm Part Two</td><td class="tc">Existing readers</td><td class="tr">Series</td><td class="tc">1</td></tr>
+          <tr><td>Women Who Rebuild: True Stories of Resilience After Disaster</td><td class="tc">Women&rsquo;s nonfiction</td><td class="tr">Evergreen</td><td class="tc">2</td></tr>
+          <tr><td>Community Over Everything: Western NC After Helene</td><td class="tc">Regional / gift</td><td class="tr">Companion</td><td class="tc">3</td></tr>
+          <tr><td>Preparedness Guide for Mountain Communities</td><td class="tc">Evergreen search</td><td class="tr">Reference</td><td class="tc">4</td></tr>
+        </tbody>
+      </table>
+      <div class="callout" style="margin-bottom:16px;">
+        <strong>The gap:</strong> no second book in this niche documents the ongoing recovery story. Part Two is an open opportunity with a pre-qualified audience already built from Part One readers.
+      </div>
+      <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px;">Keywords to Target for Part Two</p>
+      <span class="kw">hurricane helene book</span>
+      <span class="kw">hurricane survivor memoir</span>
+      <span class="kw">books on resilience for women</span>
+      <span class="kw">disaster recovery stories</span>
+      <span class="kw">Western North Carolina disaster</span>
+    </div>
+  </div>
+</div>
+
+<!-- ADS + KEYWORDS -->
+<div id="keywords" style="position:relative;top:-48px;"></div>
+<div class="sec-label">Keywords</div>
+<div class="g2 mb">
+  <div class="card">
+    <div class="card-hdr">Amazon Paid Advertising Opportunity</div>
+    <div class="callout" style="margin-bottom:18px;">
+      <strong>Low competition = low cost-per-click.</strong> A review of sponsored posts in your book niche on Amazon found limited activity, suggesting low advertiser competition. This means you can reach high-demand, actively searched keywords at a lower cost per click than in more crowded niches.
+    </div>
+    <div class="callout callout-orange" style="margin-bottom:18px;">
+      <strong>Load your keywords before you run ads.</strong> If your KDP keyword fields are not fully loaded, you are paying for visibility you could get for free. Load &ldquo;hurricane helene book&rdquo; and the supporting terms from this audit first. Then build reviews. Then launch ads.
+    </div>
+    <div class="item">
+      <div class="item-icon icon-orange">1</div>
+      <div>
+        <div class="item-t">Start with Sponsored Ads on automatic</div>
+        <div class="item-b">When you first set up an ad campaign, choose the automatic targeting option. This lets Amazon decide which searches to show your book for, based on its own data. It is the easiest place to start and quickly shows you which keywords are actually getting clicks and sales. Run it for two to four weeks on a budget of $5 to $10 per day before making any changes.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon icon-orange">2</div>
+      <div>
+        <div class="item-t">Add manual campaigns after 4 weeks</div>
+        <div class="item-b">After four weeks of auto data, build a manual campaign targeting &ldquo;hurricane helene book&rdquo; as exact match. Add phrase match for supporting terms including &ldquo;hurricane survivor memoir,&rdquo; &ldquo;Western North Carolina disaster,&rdquo; and &ldquo;natural disaster memoir.&rdquo; Pause any auto campaign term that spent without converting.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon icon-orange">3</div>
+      <div>
+        <div class="item-t">Target 30&ndash;40% Advertising Cost of Sale (ACoS)</div>
+        <div class="item-b">In a low-competition niche, this is very achievable and profitable. Monitor weekly and optimise bids against top-converting keywords.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hdr">Keyword Strategy: Existing Book</div>
+    <p style="font-size:12px;color:var(--mid);margin-bottom:14px;">These are your recommended keywords to enter directly into the keyword fields inside your KDP account. Amazon gives you 7 fields. Use every one. The right keywords help your book appear in searches it would otherwise never show up in, giving you free, ongoing visibility without spending on ads.</p>
+    <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px;">Priority Targets: Low Competition</p>
+    <div style="margin-bottom:14px;">
+      <span class="kw">hurricane helene book</span>
+      <span class="kw">hurricane survivor memoir</span>
+      <span class="kw">Western North Carolina disaster</span>
+      <span class="kw">natural disaster memoir</span>
+      <span class="kw">Appalachian flood stories</span>
+    </div>
+    <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px;">Resilience and Evergreen Keywords</p>
+    <div style="margin-bottom:14px;">
+      <span class="kw">books on resilience for women</span>
+      <span class="kw">inspirational true stories books</span>
+      <span class="kw">disaster recovery stories</span>
+      <span class="kw">community resilience book</span>
+      <span class="kw">true survival stories book</span>
+      <span class="kw">storm survivor true account</span>
+    </div>
+    <p style="font-size:10px;color:var(--muted);font-style:italic;">Focus on low competition, high demand keywords. Validate all volumes in BookBolt before committing to any paid campaign.</p>
+
+    <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--border);">
+      <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px;">Self-Assessment Signals</p>
+      <table>
+        <thead><tr><th>Signal</th><th class="tc">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Book title includes core keyword</td><td class="tc">&#10003; Yes</td></tr>
+          <tr><td>Subtitle reinforces keyword theme</td><td class="tc">&#10003; Yes</td></tr>
+          <tr><td>7 backend keyword fields fully loaded</td><td class="tc">&#9998; Needs Loading</td></tr>
+          <tr><td>Description uses &ldquo;hurricane helene&rdquo; naturally</td><td class="tc">&#9998; Verify</td></tr>
+          <tr><td>Category optimised for resilience / history</td><td class="tc">&#9998; Verify</td></tr>
+          <tr><td>A+ Content live</td><td class="tc">&#10003; Confirmed</td></tr>
+          <tr><td>All formats on single listing</td><td class="tc">&#10003; Confirmed</td></tr>
+          <tr><td>Price competitive with niche ($17 to $23 range)</td><td class="tc">&#9888; Action Required</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT STEPS -->
+<div id="quick-wins" style="position:relative;top:-48px;"></div>
+<div class="sec-label">Quick Wins</div>
+<div class="card mb">
+  <div class="card-hdr">Ranked by Priority</div>
+  <div class="step step-teal">
+    <div class="step-num num-teal">1</div>
+    <div>
+      <div class="step-t">Add &ldquo;hurricane helene book&rdquo; to All Seven KDP Keyword Fields</div>
+      <div class="step-b">If keyword fields are not fully loaded, this book is invisible to Amazon&rsquo;s search algorithm for many of the terms buyers are actively using. Load all seven fields with &ldquo;hurricane helene book&rdquo; as the lead term and fill the remaining fields with the supporting keywords in this audit. This takes 10 minutes and could shift organic reach within days of Amazon re-indexing.</div>
+    </div>
+  </div>
+  <div class="step step-orange">
+    <div class="step-num num-orange">2</div>
+    <div>
+      <div class="step-t">Add a Review Request at Two Points Inside the Book</div>
+      <div class="step-b">At 18 reviews, social proof is building but not yet at the volume needed to convert consistently. A short, genuine review request placed halfway through and again at the back costs nothing and compounds over every copy sold from this point forward.</div>
+    </div>
+  </div>
+  <div class="step step-orange">
+    <div class="step-num num-orange">3</div>
+    <div>
+      <div class="step-t">Is Your Pricing Aligned With the Market?</div>
+      <div class="step-b">The top competing books in this niche are priced at $16 to $23 for paperback. It is worth checking whether your current pricing is working for or against you. Only you know your costs and strategy, but if you are seeing traffic without conversions, pricing is one variable worth examining.</div>
+    </div>
+  </div>
+  <div class="step step-orange">
+    <div class="step-num num-orange">4</div>
+    <div>
+      <div class="step-t">Launch a Sponsored Products Auto Campaign at $5 to $10 Per Day</div>
+      <div class="step-b">Once keyword fields are loaded and you have reviews in place, activate a Sponsored Products Auto campaign. Collect four weeks of data then build a manual campaign targeting &ldquo;hurricane helene book&rdquo; with exact and phrase match bids. Target ACoS of 30 to 40%.</div>
+    </div>
+  </div>
+  <div class="step step-teal">
+    <div class="step-num num-teal">5</div>
+    <div>
+      <div class="step-t">Begin Planning Part Two with an ARC Launch Strategy</div>
+      <div class="step-b">Part Two is the biggest medium-term revenue lever available to this catalogue. A reader of Part One is already an engaged buyer. Use BookSirens or Hidden Gems to build reviews ahead of the Part Two launch date so it arrives on Amazon with social proof already in place.</div>
+    </div>
+  </div>
+</div>
+
+<!-- JORDAN'S OBSERVATION -->
+<div class="sec-label">Jordan&rsquo;s Observation</div>
+<div class="card mb">
+  <p style="font-size:13px;color:var(--mid);line-height:1.85;margin-bottom:16px;">Rebecca, the core of this book is exceptional. Eighteen five-star readers in a highly competitive event niche is not noise. That is signal. Readers who find this book are not just satisfied. They are moved. They are leaving five stars on a $35 hardcover in a category where competitors are winning market share at half the price. That tells you everything you need to know about the content. It is good. It is genuinely good.<br><br>The work now is on the business side of the book, not the creative side. The price needs to come down to where the market actually lives. The keyword fields need loading so Amazon can do its job of matching your book to buyers who are actively searching for it. And when the listing is ready, a $5-a-day auto campaign is all it takes to start collecting data that turns into a real, scalable ad strategy over time.<br><br>There is also something here that should not be overlooked. The &ldquo;Part One&rdquo; framing is a commercial decision that pays dividends every time a new reader discovers the book. A reader who finishes Part One and wants to know what happens next is your most qualified buyer for Part Two. A series compounds discoverability in ways a standalone title simply cannot. Start planning Part Two now and think about arriving at that launch with an ARC strategy already running.<br><br>The resilience angle is your longer bridge. When the Helene-specific search volume naturally recedes over the coming years, &ldquo;books on resilience for women&rdquo; and &ldquo;inspirational true stories books&rdquo; are where this catalogue can continue to grow. The content already qualifies for that audience. It is a matter of telling Amazon where to put it.<br><br>The foundation is solid. The next moves are clear. This book deserves to be found.</p>
+  <div style="margin-top:16px;background:var(--navy);border-radius:4px;padding:14px 18px;font-size:12px;color:#fff;line-height:1.65;"><span style="color:var(--teal);font-weight:700;">Note from Jordan:</span> I would welcome the opportunity to support you on your publishing journey.<br><br>Whether you are looking for free coaching support or a managed service, I can help you with a review strategy, sponsored ad campaigns, editing, formatting, cover design and more.<br><br>Please feel free to send me a direct message if you&rsquo;d like to explore further.</div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="ftr">
+  Book Opportunity Audit &nbsp;&middot;&nbsp; Hurricane Helene: Resiliency After The Storm Part One &nbsp;&middot;&nbsp; June 2026 &nbsp;&middot;&nbsp; Confidential
+</div>
+
+<script>
+(function() {
+  var nav = document.querySelector('nav.site-nav');
+  if (!nav) return;
+  var navLinks = Array.from(nav.querySelectorAll('a[href^="#"]'));
+  var sectionIds = navLinks.map(function(a) { return a.getAttribute('href').slice(1); });
+
+  function getActiveId() {
+    var scrollY = window.scrollY + 150;
+    var active = sectionIds[0];
+    sectionIds.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top + window.scrollY <= scrollY) {
+        active = id;
+      }
+    });
+    return active;
+  }
+
+  function setActive(id) {
+    navLinks.forEach(function(a) { a.classList.remove('active'); });
+    var activeLink = nav.querySelector('a[href="#' + id + '"]');
+    if (activeLink) {
+      activeLink.classList.add('active');
+      // Centre active link in nav
+      nav.scrollLeft = activeLink.offsetLeft - (nav.offsetWidth / 2) + (activeLink.offsetWidth / 2);
+    }
+  }
+
+  // Set Marketing Strategy active on load
+  window.addEventListener('DOMContentLoaded', function() { setActive('marketing'); });
+
+  // Scrollspy
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        setActive(getActiveId());
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+</script>
+</body>
+</html>
