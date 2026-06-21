@@ -247,7 +247,7 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
     <span class="hdr-pill">Author: Rebecca Wells Phillips</span>
     <span class="hdr-pill">Format: Paperback and Hardback</span>
     <span class="hdr-pill">Niche: Disaster Nonfiction</span>
-    <span class="hdr-pill accent">Score: 46 / 100 - Developing Opportunity</span>
+    <span class="hdr-pill accent">Score: 60 / 100 &ndash; Building Momentum</span>
   </div>
 </div>
 <div style="position:fixed;top:0;left:0;right:0;z-index:201;background:#1B3A48;height:58px;"></div>
@@ -271,7 +271,6 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
         <div><span class="score-num">60</span><span class="score-denom">&thinsp;/ 100</span></div>
         <div class="score-range" style="font-weight:400;background:rgba(244,116,33,.18);border:1px solid rgba(244,116,33,.4);">Building Momentum</div>
           <div style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5);">Sales/mo <span style="color:rgba(255,255,255,.85);font-weight:700;">~$1,028</span> <span style="color:var(--orange);font-size:14px;">&#8593;</span></div>
-        <div class="score-range">40 to 59 Range</div>
       </div>
       <div style="flex-shrink:0;">
         <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1754076664i/239605191.jpg" alt="Hurricane Helene: Resiliency After The Storm Part One" style="width:130px;border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.5);display:block;">
@@ -370,7 +369,6 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
         <span style="font-size:11px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;padding:4px 12px;border-radius:20px;background:rgba(244,116,33,.12);border:1px solid rgba(244,116,33,.35);color:var(--orange);">Not Active</span>
       </div>
 
-    </div>
     </div>
   </div>
 
@@ -808,41 +806,31 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
   var nav = document.querySelector('nav.site-nav');
   if (!nav) return;
   var navLinks = Array.from(nav.querySelectorAll('a[href^="#"]'));
-  var sectionIds = navLinks.map(function(a) { return a.getAttribute('href').slice(1); });
-
+  var sectionIds = navLinks.map(function(a) { return a.getAttribute('href').slice(1); }).filter(Boolean);
+  // Sort by DOM position so scroll-spy iterates sections in page order
+  var domOrderIds = sectionIds.filter(function(id) { return document.getElementById(id); });
+  domOrderIds.sort(function(a, b) {
+    return document.getElementById(a).offsetTop - document.getElementById(b).offsetTop;
+  });
   function getActiveId() {
     var scrollY = window.scrollY + 150;
-    var active = sectionIds[0];
-    sectionIds.forEach(function(id) {
+    var active = domOrderIds[0];
+    domOrderIds.forEach(function(id) {
       var el = document.getElementById(id);
-      if (el && el.getBoundingClientRect().top + window.scrollY <= scrollY) {
-        active = id;
-      }
+      if (el && el.getBoundingClientRect().top + window.scrollY <= scrollY) active = id;
     });
     return active;
   }
-
   function setActive(id) {
     navLinks.forEach(function(a) { a.classList.remove('active'); });
     var activeLink = nav.querySelector('a[href="#' + id + '"]');
-    if (activeLink) {
-      activeLink.classList.add('active');
-      // Centre active link in nav
-      nav.scrollLeft = activeLink.offsetLeft - (nav.offsetWidth / 2) + (activeLink.offsetWidth / 2);
-    }
+    if (activeLink) activeLink.classList.add('active');
   }
-
-  // Set Marketing Strategy active on load
-  window.addEventListener('DOMContentLoaded', function() { setActive(getActiveId()); });
-
-  // Scrollspy
+  document.addEventListener('DOMContentLoaded', function() { setActive(getActiveId()); });
   var ticking = false;
   window.addEventListener('scroll', function() {
     if (!ticking) {
-      window.requestAnimationFrame(function() {
-        setActive(getActiveId());
-        ticking = false;
-      });
+      window.requestAnimationFrame(function() { setActive(getActiveId()); ticking = false; });
       ticking = true;
     }
   });
