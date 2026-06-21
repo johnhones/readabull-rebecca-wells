@@ -267,10 +267,10 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
   <div class="score-panel">
     <div style="display:flex;gap:24px;align-items:center;margin-bottom:20px;">
       <div style="flex:1;min-width:0;">
-        <div class="score-eyebrow">Author Opportunity Score</div>
+        <div class="score-eyebrow tip" style="position:relative;display:inline-flex;align-items:center;gap:8px;cursor:default;">Author Opportunity Score <span class="tip-q" style="border-color:rgba(244,116,33,.5);color:var(--orange);">?</span><span class="tip-box" style="font-weight:400;letter-spacing:0;text-transform:none;">Your book&rsquo;s current discoverability across four key factors Amazon uses to surface books to buyers: listing optimisation, Best Seller Rank vs niche average, review count, and pricing vs niche. Each factor is scored and combined to give a total out of 100.</span></div>
         <div><span class="score-num">60</span><span class="score-denom">&thinsp;/ 100</span></div>
         <div class="score-range" style="font-weight:400;background:rgba(244,116,33,.18);border:1px solid rgba(244,116,33,.4);">Building Momentum</div>
-          <div style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5);">Sales/mo <span style="color:rgba(255,255,255,.85);font-weight:700;">~$1,028</span> <span style="color:var(--teal);font-size:14px;">&#8593;</span></div>
+          <div style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5);">Sales/mo <span style="color:rgba(255,255,255,.85);font-weight:700;">~$1,028</span> <span style="color:var(--orange);font-size:14px;">&#8593;</span></div>
         <div class="score-range">40 to 59 Range</div>
       </div>
       <div style="flex-shrink:0;">
@@ -837,7 +837,7 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
   }
 
   // Set Marketing Strategy active on load
-  window.addEventListener('DOMContentLoaded', function() { setActive('marketing'); });
+  window.addEventListener('DOMContentLoaded', function() { setActive(getActiveId()); });
 
   // Scrollspy
   var ticking = false;
