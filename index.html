@@ -1,51 +1,10 @@
-<!DOCTYPE html>
-<!--
-=======================================================================
-READABULL DASHBOARD TEMPLATE
-=======================================================================
-INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
-
-1. NEVER use em dashes (— or &mdash;) anywhere in this document.
-   Use commas, colons, or rewrite the sentence instead.
-
-2. Every {{PLACEHOLDER}} must be replaced with real content.
-   Do not leave any placeholder unfilled.
-
-3. Do NOT change any CSS, layout, structure, or class names.
-   Only replace placeholder values.
-
-4. STEP 1 KEYWORDS: Always open with "If you have not already done so..."
-   Reference the PRIMARY KEYWORD by name in the third bullet point.
-   Do not say "use the recommended keywords" generically.
-
-5. STEP 2 COMPETING BOOKS: Reference the actual competitor book titles
-   from the audit by name. Do not give generic advice.
-
-6. STEP 3 REVIEWS:
-   - If author has 0 reviews: heading = "Get Some Ratings and Reviews"
-   - If author already has reviews: heading = "Keep Getting Fresh Ratings and Reviews"
-   - Always include the point that fresh positive reviews carry real
-     weight even against books with hundreds of reviews. Amazon values
-     recency, not just volume.
-
-7. STEP 4 HARDBACK:
-   - If author already has a hardback edition: SKIP this step entirely.
-   - If no hardback: include the step as normal.
-
-8. QUICK WINS: Reference the primary keyword by name.
-   Say "Add [PRIMARY KEYWORD] to your keyword fields" not generic advice.
-
-9. AMAZON ADS: Frame as optional but highly recommended once previous
-   steps are complete. Not a hard sell.
-
-10. No em dashes. Ever. Not in any placeholder content you write.
-=======================================================================
--->
+<!DOCTYPE html><!-- build:20260622RWP -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book Opportunity Audit - Hurricane Helene: Resiliency After The Storm Part One</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<title>Readabull Audit: Hurricane Helene - Resiliency After The Storm Part One</title>
 <style>
   :root {
     --teal:     #00B5AD;
@@ -61,200 +20,226 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
     --border:   #DDE3E7;
     --white:    #FFFFFF;
     --black:    #111111;
-    --red:      #C62828;
-    --red-l:    #FFEBEE;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: #ECEEF0;
-    color: var(--black);
-    line-height: 1.6;
-    font-size: 13px;
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; background:#F9FAFB; color:var(--black); line-height:1.6; font-size:13px; }
+
+  .wrap { max-width:1260px; margin:0 auto; padding:40px 32px; }
+  .g2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .mb { margin-bottom:24px; }
+
+  .sec-label { font-size:14px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--orange); margin:40px 0 16px; display:flex; align-items:center; gap:12px; }
+  .sec-label::after { content:''; flex:1; height:1px; background:var(--border); }
+
+  .card { background:var(--white); border-radius:6px; padding:28px 32px; border:1px solid var(--border); }
+  .card-hdr { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--orange); margin-bottom:18px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+  .card-title { font-size:15px; font-weight:700; color:var(--teal-d); margin-bottom:10px; line-height:1.3; }
+
+  .score-panel { background:var(--navy); border-radius:6px; padding:32px; }
+  .score-eyebrow { font-size:14px; letter-spacing:2.5px; text-transform:uppercase; color:var(--orange); margin-bottom:12px; }
+  .score-num { font-size:80px; font-weight:900; color:var(--teal); line-height:1; }
+  .score-denom { font-size:28px; color:var(--orange); font-weight:300; }
+  .score-range { display:inline-block; margin-top:10px; background:rgba(244,116,33,.18); border:1px solid rgba(244,116,33,.4); color:#fff; padding:4px 16px; border-radius:3px; font-size:11px; font-weight:400; letter-spacing:1px; }
+  .bar-row { margin-top:28px; }
+  .bar-item { margin-bottom:13px; }
+  .bar-item:last-child { margin-bottom:0; }
+  .bar-meta { display:flex; justify-content:space-between; margin-bottom:5px; }
+  .bar-lbl { font-size:12px; color:rgba(255,255,255,.7); }
+  .bar-val { font-size:12px; font-weight:700; color:rgba(255,255,255,.9); }
+  .bar-track { height:6px; background:rgba(255,255,255,.1); border-radius:3px; overflow:hidden; }
+  .bar-fill { height:100%; border-radius:3px; }
+
+  .stat-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:6px; overflow:hidden; margin-top:20px; }
+  .stat-cell { background:var(--white); padding:16px; text-align:center; display:flex; flex-direction:column; align-items:center; }
+  .stat-cell > div:last-child { margin-top:auto; padding-top:6px; }
+  .stat-v { font-size:22px; font-weight:800; color:var(--orange); }
+  .stat-l { font-size:12px; color:var(--mid); margin-top:3px; line-height:1.4; }
+
+  .badge { display:inline-block; padding:3px 9px; border-radius:3px; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.4px; }
+  .b-teal   { background:var(--teal-l);   color:var(--teal-d); }
+  .b-orange { background:var(--orange-l); color:var(--orange-d); }
+  .b-navy   { background:rgba(27,58,72,.08); color:var(--navy); }
+  .b-muted  { background:var(--light);    color:var(--muted); }
+
+  .item { display:flex; gap:14px; align-items:flex-start; margin-bottom:20px; }
+  .item:last-child { margin-bottom:0; }
+  .item-icon { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; flex-shrink:0; margin-top:1px; }
+  .icon-teal   { background:var(--teal-l);   color:var(--teal-d); }
+  .icon-orange { background:var(--orange-l); color:var(--orange-d); }
+  .item-t { font-size:15px; font-weight:700; color:var(--teal-d); margin-bottom:3px; }
+  .item-b { font-size:12px; color:var(--mid); line-height:1.6; }
+
+  .callout { border-left:3px solid var(--teal); background:var(--teal-l); padding:14px 18px; border-radius:0 4px 4px 0; font-size:12px; color:var(--navy); line-height:1.65; }
+  .callout-orange { border-left-color:var(--orange); background:var(--orange-l); }
+  .callout strong { color:var(--black); }
+
+  table { width:100%; border-collapse:collapse; font-size:12px; }
+  th { background:var(--navy); color:rgba(255,255,255,.85); padding:9px 12px; text-align:left; font-weight:600; font-size:10px; letter-spacing:.5px; text-transform:uppercase; }
+  td { padding:9px 12px; border-bottom:1px solid var(--border); color:var(--mid); }
+  tr:last-child td { border-bottom:none; }
+  tr:nth-child(even) td { background:var(--light); }
+  .tc { text-align:center; } .tr { text-align:right; }
+
+  .step { display:flex; gap:16px; align-items:flex-start; padding:18px 20px; border-radius:4px; margin-bottom:10px; }
+  .step:last-child { margin-bottom:0; }
+  .step-teal   { background:var(--teal-l);   border-left:4px solid var(--teal); }
+  .step-orange { background:var(--orange-l); border-left:4px solid var(--orange); }
+  .step-num { width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; flex-shrink:0; color:#fff; }
+  .num-teal   { background:var(--teal); }
+  .num-orange { background:var(--orange); }
+  .step-t { font-size:13px; font-weight:700; color:var(--teal-d); margin-bottom:4px; }
+  .step-b { font-size:12px; color:var(--mid); line-height:1.55; }
+
+  .banner { background:var(--navy); color:#fff; border-radius:6px; padding:24px 32px; margin-bottom:24px; }
+  .banner h3 { font-size:15px; font-weight:700; margin-bottom:6px; color:#fff; }
+  .banner p  { font-size:12px; color:rgba(255,255,255,.7); line-height:1.65; }
+  .banner-stat { display:inline-block; background:var(--teal); border:1px solid var(--teal-d); color:#fff; padding:8px 18px; border-radius:3px; font-size:13px; font-weight:400; margin:8px 6px 0 0; }
+
+  .hb-card { background:var(--white); border:1px solid var(--border); border-top:4px solid var(--teal); border-radius:6px; padding:28px 32px; margin-bottom:24px; }
+  .hb-eyebrow { font-size:18px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--teal-d); margin-bottom:8px; }
+
+  .tip { position:relative; display:inline-flex; align-items:center; gap:5px; }
+  .tip-q { width:14px; height:14px; border-radius:50%; background:rgba(255,255,255,.15); color:rgba(255,255,255,.55); font-size:8px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; cursor:default; flex-shrink:0; }
+  .tip-box { display:none; position:absolute; left:0; bottom:calc(100% + 8px); background:#fff; color:#1B3A48; font-size:11px; line-height:1.55; padding:9px 12px; border-radius:4px; width:210px; box-shadow:0 4px 20px rgba(0,0,0,.25); z-index:100; pointer-events:none; }
+  .tip-box::after { content:''; position:absolute; top:100%; left:8px; border:5px solid transparent; border-top-color:#fff; }
+  .tip:hover .tip-box { display:block; }
+
+  .ftr { background:var(--navy); color:rgba(255,255,255,.35); text-align:center; padding:22px; font-size:11px; }
+
+  .mob-bar { display:none; position:fixed; top:0; left:0; right:0; height:80px; background:var(--navy); z-index:500; align-items:center; justify-content:space-between; padding:0 16px; border-bottom:1px solid rgba(255,255,255,.08); }
+  .mob-logo img { height:77px; width:auto; display:block; }
+  .mob-hamburger { background:none; border:none; cursor:pointer; padding:6px; display:flex; flex-direction:column; gap:5px; }
+  .mob-hamburger span { display:block; width:22px; height:2px; background:#fff; border-radius:2px; }
+  .mob-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:350; }
+  .mob-overlay.open { display:block; }
+
+  @media(max-width:900px){
+    .g2{ grid-template-columns:1fr; gap:16px; }
+    .g2>*{ min-width:0; width:100%; }
+    .kw-tool{ grid-template-columns:1fr; }
+    .wrap{ padding:24px 16px; }
+  }
+  @media(max-width:768px){
+    body{ overflow-x:hidden; }
+    .mob-bar{ display:flex; }
+    .sidebar{ transform:translateX(-100%); transition:transform .25s ease; }
+    .sidebar.open{ transform:translateX(0); }
+    .main{ margin-left:0 !important; padding-top:80px; }
+    [id]{ scroll-margin-top:90px; }
+    .score-panel{ padding:20px; }
+    .score-num{ font-size:56px; }
+    .score-denom{ font-size:22px; }
+    .stat-strip{ grid-template-columns:1fr 1fr; }
+    .kw-table td,.kw-table th{ padding:7px 8px; font-size:11px; }
+    .scroll-top{ bottom:20px; right:16px; }
+  }
+  @media(max-width:600px){
+    .wrap{ padding:14px 12px; }
+    .card{ padding:16px 14px; }
+    .hb-eyebrow{ font-size:14px; }
+    .step{ padding:12px 14px; }
+    .stat-strip{ grid-template-columns:1fr; }
   }
 
-  /* HEADER */
-  .hdr { background: var(--navy); color: #fff; padding: 40px 56px 32px; border-bottom: 4px solid var(--teal); }
-  .hdr-meta { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
-  .hdr h1 { font-size: 30px; font-weight: 700; color: #fff; letter-spacing: -.3px; margin-bottom: 4px; }
-  .hdr h2 { font-size: 15px; color: var(--orange); font-weight: 400; margin-bottom: 18px; }
-  .hdr-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-  .hdr-pill { display: inline-block; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.75); padding: 5px 18px; border-radius: 3px; font-size: 14px; }
-  .hdr-pill.accent { background: var(--orange); border-color: var(--orange); color: #fff; font-weight: 400; }
+  .sidebar { position:fixed; top:0; left:0; bottom:0; width:220px; background:var(--navy); z-index:400; display:flex; flex-direction:column; border-right:1px solid rgba(255,255,255,.07); overflow-y:auto; }
+  .sb-logo { padding:24px 12px 20px; border-bottom:1px solid rgba(255,255,255,.07); text-align:center; }
+  .sb-logo a { display:block; line-height:0; }
+  .sb-logo img { height:120px; width:auto; display:inline-block; position:relative; left:-8px; }
+  .sb-nav { padding:16px 10px; flex:1; }
+  .sb-label { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.7); padding:0 8px; margin:16px 0 6px; }
+  .sb-label:first-child { margin-top:0; }
+  .sb-nav a { display:flex; align-items:center; gap:10px; padding:9px 10px; border-radius:5px; text-decoration:none; color:rgba(255,255,255,.5); font-size:12px; margin-bottom:2px; transition:background .15s,color .15s; }
+  .sb-nav a i { font-size:16px; flex-shrink:0; }
+  .sb-nav a:hover,.sb-nav a.active { background:rgba(0,181,173,.12); color:var(--teal); }
+  .sb-nav a.act { color:rgba(244,116,33,.65); }
+  .sb-nav a.act:hover { background:rgba(244,116,33,.1); color:var(--orange); }
+  .sb-divider { border:none; border-top:1px solid rgba(255,255,255,.07); margin:12px 0; }
+  .main { margin-left:220px; }
 
-  /* LAYOUT */
-  .wrap { max-width: 1260px; margin: 0 auto; padding: 40px 32px; }
-  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .mb { margin-bottom: 24px; }
-  .mb-sm { margin-bottom: 14px; }
+  .kw-tool { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px; }
+  .kw-panel { background:var(--white); border:1px solid var(--border); border-radius:6px; overflow:hidden; }
+  .kw-panel-hdr { background:#0d1f35; color:#fff; padding:14px 18px; display:flex; align-items:center; justify-content:space-between; min-height:94px; box-sizing:border-box; }
+  .kw-panel-hdr.rec { background:#0d1f35; }
+  .kw-panel-hdr span { font-size:13px; font-weight:700; }
+  .kw-count { background:var(--teal); color:#fff; font-size:10px; font-weight:700; padding:2px 8px; border-radius:20px; }
+  .kw-panel-hdr.rec .kw-count { background:var(--orange); }
+  .kw-search { padding:12px 14px; border-bottom:1px solid var(--border); display:flex; gap:8px; }
+  .kw-search input { flex:1; border:1px solid var(--border); border-radius:4px; padding:7px 10px; font-size:12px; outline:none; color:var(--black); }
+  .kw-search input:focus { border-color:var(--teal); }
+  .kw-table { width:100%; border-collapse:collapse; font-size:12px; }
+  .kw-table th { background:var(--light); color:var(--mid); padding:8px 12px; text-align:left; font-size:10px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; border-bottom:1px solid var(--border); }
+  .kw-table td { padding:9px 12px; border-bottom:1px solid var(--border); color:var(--mid); }
+  .kw-table tr:last-child td { border-bottom:none; }
+  .kw-table tr:hover td { background:var(--light); }
+  .kw-table .kw-word { color:var(--navy); font-weight:500; }
+  .kw-vol { font-weight:600; color:var(--navy); }
+  .comp-high { display:inline-block; background:#FEE2E2; color:#B91C1C; font-size:10px; font-weight:700; padding:2px 8px; border-radius:3px; }
+  .comp-med  { display:inline-block; background:#FEF3C7; color:#92400E; font-size:10px; font-weight:700; padding:2px 8px; border-radius:3px; }
+  .comp-low  { display:inline-block; background:var(--teal-l); color:var(--teal-d); font-size:10px; font-weight:700; padding:2px 8px; border-radius:3px; }
+  .kw-add { background:none; border:1px solid var(--border); border-radius:3px; padding:3px 8px; font-size:10px; color:var(--muted); cursor:pointer; transition:all .15s; }
+  .kw-add:hover { border-color:var(--teal); color:var(--teal); background:var(--teal-l); }
+  .kw-rec-tag { display:inline-block; background:var(--orange-l); color:var(--orange-d); border:1px solid rgba(244,116,33,.2); border-radius:3px; padding:2px 6px; font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; margin-left:4px; vertical-align:middle; }
+  .kw-na-tag { display:inline-block; background:var(--light); color:var(--muted); border:1px solid var(--border); border-radius:3px; padding:2px 6px; font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; margin-left:4px; vertical-align:middle; }
 
-  /* SECTION LABEL */
-  .sec-label { font-size: 14px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin: 40px 0 16px; display: flex; align-items: center; gap: 12px; }
-  .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-
-  /* CARDS */
-  .card { background: var(--white); border-radius: 6px; padding: 28px 32px; border: 1px solid var(--border); }
-  .card-hdr { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
-  .card-title { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 10px; line-height: 1.3; }
-
-  /* SCORE */
-  .score-panel { background: var(--navy); border-radius: 6px; padding: 32px; }
-  .score-eyebrow { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
-  .score-num { font-size: 80px; font-weight: 900; color: var(--teal); line-height: 1; }
-  .score-denom { font-size: 28px; color: var(--orange); font-weight: 300; }
-  .score-verdict { font-size: 18px; font-weight: 600; color: #fff; margin-top: 8px; }
-  .score-range { display: inline-block; margin-top: 10px; background: rgba(0,181,173,.12); border: 1px solid rgba(0,181,173,.3); color: #fff; padding: 4px 16px; border-radius: 3px; font-size: 11px; font-weight: 400; letter-spacing: 1px; }
-  .bar-row { margin-top: 28px; }
-  .bar-item { margin-bottom: 13px; }
-  .bar-item:last-child { margin-bottom: 0; }
-  .bar-meta { display: flex; justify-content: space-between; margin-bottom: 5px; }
-  .bar-lbl { font-size: 12px; color: rgba(255,255,255,.7); }
-  .bar-val { font-size: 12px; font-weight: 700; color: rgba(255,255,255,.9); }
-  .bar-track { height: 6px; background: rgba(255,255,255,.1); border-radius: 3px; overflow: hidden; }
-  .bar-fill { height: 100%; border-radius: 3px; }
-
-  /* STAT STRIP */
-  .stat-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 20px; }
-  .stat-cell { background: var(--white); padding: 16px; text-align: center; display: flex; flex-direction: column; align-items: center; }
-  .stat-cell > div:last-child { margin-top: auto; padding-top: 6px; }
-  .stat-v { font-size: 20px; font-weight: 800; color: var(--orange); }
-  .stat-l { font-size: 12px; color: var(--mid); margin-top: 3px; }
-
-  /* BADGES */
-  .badge { display: inline-block; padding: 3px 9px; border-radius: 3px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; }
-  .b-teal   { background: var(--teal-l);   color: var(--teal-d); }
-  .b-orange { background: var(--orange-l); color: var(--orange-d); }
-  .b-navy   { background: rgba(27,58,72,.08); color: var(--navy); }
-  .b-muted  { background: var(--light);    color: var(--muted); }
-
-  /* ITEMS */
-  .item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
-  .item:last-child { margin-bottom: 0; }
-  .item-icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
-  .icon-teal   { background: var(--teal-l);   color: var(--teal-d); }
-  .icon-orange { background: var(--orange-l); color: var(--orange-d); }
-  .icon-navy   { background: rgba(27,58,72,.08); color: var(--navy); }
-  .item-t { font-size: 15px; font-weight: 700; color: var(--teal-d); margin-bottom: 3px; }
-  .item-b { font-size: 12px; color: var(--mid); line-height: 1.6; }
-
-  /* CALLOUTS */
-  .callout { border-left: 3px solid var(--teal); background: var(--teal-l); padding: 14px 18px; border-radius: 0 4px 4px 0; font-size: 12px; color: var(--navy); line-height: 1.65; }
-  .callout-orange { border-left-color: var(--orange); background: var(--orange-l); }
-  .callout strong { color: var(--black); }
-
-  /* TABLES */
-  table { width: 100%; border-collapse: collapse; font-size: 12px; }
-  th { background: var(--navy); color: rgba(255,255,255,.85); padding: 9px 12px; text-align: left; font-weight: 600; font-size: 10px; letter-spacing: .5px; text-transform: uppercase; }
-  td { padding: 9px 12px; border-bottom: 1px solid var(--border); color: var(--mid); }
-  tr:last-child td { border-bottom: none; }
-  tr:nth-child(even) td { background: var(--light); }
-  .tc { text-align: center; } .tr { text-align: right; }
+  .scroll-top { position:fixed; bottom:28px; right:28px; z-index:400; width:44px; height:44px; border-radius:50%; background:var(--navy); color:#fff; border:2px solid var(--teal); font-size:20px; cursor:pointer; opacity:0; pointer-events:none; transition:opacity .2s; display:flex; align-items:center; justify-content:center; }
+  .scroll-top.visible { opacity:1; pointer-events:auto; }
+  [id] { scroll-margin-top:20px; }
+</style>
+<style>
 
   /* KW PILLS */
   .kw { display: inline-block; background: var(--teal-l); color: var(--teal-d); border: 1px solid rgba(0,181,173,.2); border-radius: 3px; padding: 3px 10px; font-size: 11px; font-weight: 600; margin: 3px; }
   .kw span { color: var(--teal-d); font-weight: 700; }
 
-  /* STEPS */
-  .step { display: flex; gap: 16px; align-items: flex-start; padding: 18px 20px; border-radius: 4px; margin-bottom: 10px; }
-  .step:last-child { margin-bottom: 0; }
-  .step-teal   { background: var(--teal-l);   border-left: 4px solid var(--teal); }
-  .step-orange { background: var(--orange-l); border-left: 4px solid var(--orange); }
-  .step-num { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; flex-shrink: 0; color: #fff; }
-  .num-teal   { background: var(--teal); }
-  .num-orange { background: var(--orange); }
-  .step-t { font-size: 13px; font-weight: 700; color: var(--black); margin-bottom: 4px; }
-  .step-b { font-size: 12px; color: var(--mid); line-height: 1.55; }
-
-  /* BANNER */
-  .banner { background: var(--navy); color: #fff; border-radius: 6px; padding: 24px 32px; margin-bottom: 24px; }
-  .banner h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--teal); }
-  .banner p  { font-size: 12px; color: var(--orange); line-height: 1.65; }
-  .banner-stat { display: inline-block; background: var(--teal); border: 1px solid var(--teal-d); color: #fff; padding: 8px 18px; border-radius: 3px; font-size: 14px; font-weight: 400; margin: 8px 6px 0 0; }
-
-  /* HARDBACK CARD */
-  .hb-card { background: var(--white); border: 1px solid var(--border); border-top: 4px solid var(--teal); border-radius: 6px; padding: 28px 32px; margin-bottom: 24px; }
-  .hb-eyebrow { font-size: 18px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-d); margin-bottom: 8px; }
-
   /* ACTION REQUIRED */
-  .action-required { background: var(--red); color: #fff; border-radius: 6px; padding: 24px 32px; margin-top: 32px; display: flex; gap: 20px; align-items: flex-start; }
+  .action-required { background: #C62828; color: #fff; border-radius: 6px; padding: 24px 32px; margin-top: 32px; display: flex; gap: 20px; align-items: flex-start; }
   .ar-icon  { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
   .ar-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 5px; }
   .ar-body  { font-size: 12px; color: rgba(255,255,255,.85); line-height: 1.65; }
 
-  /* FOOTER */
-  .ftr { background: var(--navy); color: rgba(255,255,255,.35); text-align: center; padding: 22px; font-size: 11px; }
-
-  @media(max-width:900px){
-    .g2{ grid-template-columns:1fr; }
-    .hdr{ padding:24px 20px; }
-    .wrap{ padding:24px 16px; }
-    .score-num{ font-size:56px; }
-  }
-  @media(max-width:600px){
-    html,body{ overflow-x:hidden; }
-    .hdr{ padding:16px; }
-    .hdr h1{ font-size:22px; }
-    .hdr h2{ font-size:13px; }
-    .hdr-pill{ font-size:12px; padding:4px 12px; }
-    .wrap{ padding:16px 12px; }
-    .g2{ grid-template-columns:1fr; gap:14px; }
-    .card{ padding:18px 16px; }
-    .score-panel{ padding:20px 16px; }
-    .score-num{ font-size:48px; }
-    .score-denom{ font-size:20px; }
-    .score-verdict{ font-size:15px; }
-    .stat-strip{ grid-template-columns:1fr; }
-    .stat-cell{ padding:12px; }
-    .site-nav a{ font-size:11px; padding:7px 10px; }
-    .site-nav{ gap:6px; padding:8px 10px; }
-    .hb-eyebrow{ font-size:14px; }
-    .step{ padding:12px 14px; }
-    .banner-stat{ font-size:12px; padding:6px 12px; }
-    .item-t{ font-size:13px; }
-    .sec-label{ font-size:11px; }
-    table{ font-size:11px; }
-    th,td{ padding:7px 8px; }
-  }
-
-  .tip { position: relative; display: inline-flex; align-items: center; gap: 5px; }
-  .tip-q { width:14px; height:14px; border-radius:50%; border:1px solid rgba(255,255,255,.3); color:rgba(255,255,255,.4); font-size:9px; font-style:italic; font-weight:400; display:inline-flex; align-items:center; justify-content:center; cursor:default; flex-shrink:0; }
-  .tip-box { display:none; position:absolute; left:0; top:calc(100% + 8px); background:#1a3550; border:1px solid rgba(0,181,173,.3); color:rgba(255,255,255,.75); font-size:11px; line-height:1.55; padding:10px 12px; border-radius:6px; width:240px; box-shadow:0 4px 20px rgba(0,0,0,.4); z-index:100; pointer-events:none; }
+  /* TOOLTIP — dark style for score panel */
+  .tip-box { display:none; position:absolute; left:0; bottom:calc(100% + 8px); background:#1a3550; border:1px solid rgba(0,181,173,.3); color:rgba(255,255,255,.75); font-size:11px; line-height:1.55; padding:10px 12px; border-radius:6px; width:240px; box-shadow:0 4px 20px rgba(0,0,0,.4); z-index:100; pointer-events:none; }
   .tip-box::before { content:''; position:absolute; top:-5px; left:14px; width:8px; height:8px; background:#1a3550; border-left:1px solid rgba(0,181,173,.3); border-top:1px solid rgba(0,181,173,.3); transform:rotate(45deg); }
-  .tip:hover .tip-box { display:block; }
-  .tt-row span:last-child { color:rgba(255,255,255,.7); font-weight:500; text-align:right; }
+  .tip-box::after { display:none; }
 
-  /* FLOATING NAV */
-  body { padding-top:116px; }
-  .site-nav { position:fixed; top:0; left:0; right:0; z-index:200; background:#00B5AD; border-bottom:none; display:flex; justify-content:center; gap:10px; padding:10px 20px; overflow-x:auto; }
-  .site-nav a { display:inline-flex; align-items:center; color:#fff; font-size:13px; font-weight:400; letter-spacing:.4px; padding:10px 16px; text-decoration:none; border:1px solid rgba(255,255,255,.6); white-space:nowrap; transition:color .15s,background .15s; flex-shrink:0; background:rgba(0,0,0,.15); border-radius:4px; }
-  .site-nav a:hover { background:rgba(0,0,0,.25); }
-  .site-nav a.active { font-weight:700; background:rgba(255,255,255,.25); border-color:#fff; }
-  [id] { scroll-margin-top:120px; }
 </style>
 </head>
 <body>
 
-<div class="hdr">
-  <div class="hdr-meta">Book Opportunity Audit &nbsp;&middot;&nbsp; June 2026 &nbsp;&middot;&nbsp; Confidential</div>
-  <h1>Hurricane Helene: Resiliency After The Storm Part One</h1>
-  <h2>A documentary account of survival and rebuilding after the storm that devastated Western North Carolina</h2>
-  <div class="hdr-pills">
-    <span class="hdr-pill">Author: Rebecca Wells Phillips</span>
-    <span class="hdr-pill">Format: Paperback and Hardback</span>
-    <span class="hdr-pill">Niche: Disaster Nonfiction</span>
-    <span class="hdr-pill accent">Score: 59 / 100 &ndash; Growing</span>
-  </div>
+<div class="mob-bar">
+  <div class="mob-logo"><a href="#score"><img src="logo3.png" alt="Readabull"></a></div>
+  <button class="mob-hamburger" onclick="toggleSidebar()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </div>
-<div style="position:fixed;top:0;left:0;right:0;z-index:201;background:#1B3A48;height:58px;"></div>
-<nav class="site-nav" style="top:58px;">
-  <a href="#score"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Opportunity Score</a>
-  <a href="#marketing"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Marketing Strategy</a>
-  <a href="#market"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Market Analysis</a>
-  <a href="#competitors"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Competitors</a>
-  <a href="#keywords"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Keywords</a>
-  <a href="#quick-wins"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Quick Wins</a>
-</nav>
+<div class="mob-overlay" id="mob-overlay" onclick="toggleSidebar()"></div>
 
+<div class="sidebar" id="sidebar">
+  <div class="sb-logo"><a href="#score"><img src="logo3.png" alt="Readabull"></a></div>
+  <nav class="sb-nav">
+    <div class="sb-label">Navigate</div>
+    <a href="#score"><i class="ti ti-chart-bar"></i>Overview</a>
+    <a href="#competitors"><i class="ti ti-users"></i>Market Analysis</a>
+    <a href="#marketing"><i class="ti ti-speakerphone"></i>Marketing Strategy</a>
+    <a href="#keywords"><i class="ti ti-search"></i>Keywords</a>
+    <a href="#quick-wins"><i class="ti ti-bolt"></i>Quick Wins</a>
+    <hr class="sb-divider">
+    <div class="sb-label">Tools</div>
+    <a href="#" class="act"><i class="ti ti-star"></i>Get Reviews</a>
+    <a href="#" class="act"><i class="ti ti-book-upload"></i>Build Your ARC</a>
+    <a href="#" class="act"><i class="ti ti-ad-2"></i>Ad Campaigns</a>
+    <hr class="sb-divider">
+    <div class="sb-label">Marketplaces</div>
+    <a href="#" onclick="return false;" class="act" style="background:rgba(244,116,33,.12);color:var(--orange);"><i class="ti ti-brand-amazon"></i>Amazon KDP</a>
+    <a href="#" onclick="return false;" class="act"><i class="ti ti-brand-tiktok"></i>TikTok Shop</a>
+    <a href="#" onclick="return false;" class="act"><i class="ti ti-building-store"></i>Barnes &amp; Noble</a>
+    <a href="#" onclick="return false;" class="act"><i class="ti ti-brand-apple"></i>Apple Books</a>
+    <a href="#" onclick="return false;" class="act"><i class="ti ti-headphones"></i>Audible / ACX</a>
+  </nav>
+</div>
+<button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+
+<div class="main">
 <div class="wrap" id="score">
 
 <!-- SCORE + SUMMARY -->
@@ -262,10 +247,10 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
   <div class="score-panel">
     <div style="display:flex;gap:24px;align-items:center;margin-bottom:20px;">
       <div style="flex:1;min-width:0;">
-        <div class="score-eyebrow tip" style="position:relative;display:inline-flex;align-items:center;gap:8px;cursor:default;">Author Opportunity Score <span class="tip-q" style="border-color:rgba(244,116,33,.5);color:var(--orange);">?</span><span class="tip-box" style="font-weight:400;letter-spacing:0;text-transform:none;">Your Author Opportunity Score measures how easy it is for readers to find and buy your book on Amazon. The higher your score, the more visible your book is and the more sales it generates.</span></div>
-        <div><span class="score-num">59</span><span class="score-denom">&thinsp;/ 100</span></div>
-        <div class="score-range tip" style="font-weight:400;background:rgba(0,181,173,.12);border:1px solid rgba(0,181,173,.3);position:relative;display:inline-flex;align-items:center;gap:6px;cursor:default;">Growing <span class="tip-q" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7);font-size:9px;width:14px;height:14px;">?</span><span class="tip-box" style="font-weight:400;letter-spacing:0;text-transform:none;left:0;right:auto;min-width:220px;top:calc(100% + 8px);bottom:auto;"><strong>Getting Started:</strong> In the early stages of building discoverability. Focus on getting your listing set up correctly and gathering your first reviews. Hold off on ads until your foundations are in place.<br><br><strong>Early Stage:</strong> Your book is starting to build momentum. Continue strengthening your listing, grow your review count, and consider activating Amazon Ads.<br><br><strong>Growing:</strong> Solid foundations and gaining traction. Scale what is working: more reviews, optimised ad campaigns, and new formats.<br><br><strong>Established:</strong> Highly discoverable and performing well. Maintain momentum: protect your reviews, refine your ads, and leverage your visibility for additional titles.</span></div>
-          <div style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5);">Sales/mo <span style="color:rgba(255,255,255,.85);font-weight:700;">~$1,028</span> <span style="color:var(--orange);font-size:14px;">&#8593;</span></div>
+        <div class="score-eyebrow tip" style="position:relative;display:inline-flex;align-items:center;gap:8px;cursor:default;">Discoverability Score <span class="tip-q" style="border-color:rgba(244,116,33,.5);color:var(--orange);">?</span><span class="tip-box" style="font-weight:400;letter-spacing:0;text-transform:none;top:calc(100% + 8px);bottom:auto;left:0;right:auto;min-width:280px;background:#1a3550;border:1px solid rgba(0,181,173,.3);color:rgba(255,255,255,.85);padding:12px 14px;border-radius:4px;font-size:11px;line-height:1.6;box-shadow:0 4px 20px rgba(0,0,0,.4);">Your Discoverability Score measures how easy it is for readers to find and buy your book on Amazon. The higher your score, the more visible your book is and the more sales it generates.</span></div>
+        <div><span class="score-num">81</span><span class="score-denom">&thinsp;/ 100</span></div>
+        <div class="score-range tip" style="font-weight:400;background:rgba(0,181,173,.12);border:1px solid rgba(0,181,173,.3);position:relative;display:inline-flex;align-items:center;gap:6px;cursor:default;">Established <span class="tip-q" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7);font-size:9px;width:14px;height:14px;">?</span><span class="tip-box" style="font-weight:400;letter-spacing:0;text-transform:none;left:0;right:auto;min-width:220px;top:calc(100% + 8px);bottom:auto;"><strong>Getting Started:</strong> In the early stages of building discoverability. Focus on getting your listing set up correctly and gathering your first reviews. Hold off on ads until your foundations are in place.<br><br><strong>Early Stage:</strong> Your book is starting to build momentum. Continue strengthening your listing, grow your review count, and consider activating Amazon Ads.<br><br><strong>Growing:</strong> Solid foundations and gaining traction. Scale what is working: more reviews, optimised ad campaigns, and new formats.<br><br><strong>Established:</strong> Highly discoverable and performing well. Maintain momentum: protect your reviews, refine your ads, and leverage your visibility for additional titles.</span></div>
+          <div style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5);">Sales/mo <span style="color:rgba(255,255,255,.85);font-weight:700;">~$70</span> <span style="color:var(--orange);font-size:14px;">&#8593;</span></div>
       </div>
       <div style="flex-shrink:0;">
         <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1754076664i/239605191.jpg" alt="Hurricane Helene: Resiliency After The Storm Part One" style="width:130px;border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.5);display:block;">
@@ -294,9 +279,9 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
               Verified reviews are one of the strongest signals Amazon uses to rank and convert books. More reviews improve organic rank, which drives more sales, which generates more reviews. Target 15 before running ads, then keep building.
             </span>
           </span>
-          <span class="bar-val">10 / 20</span>
+          <span class="bar-val">14 / 20</span>
         </div>
-        <div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--teal);"></div></div>
+        <div class="bar-track"><div class="bar-fill" style="width:70%;background:var(--teal);"></div></div>
       </div>
 
       <!-- 3. Star Rating /20 -->
@@ -307,9 +292,9 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
               Your star rating is the average score left by readers who have reviewed your book. A rating of 4.0 or above is the target. The best way to maintain a strong rating is to deliver on what your title and description promise.
             </span>
           </span>
-          <span class="bar-val">Unrated</span>
+          <span class="bar-val">18 / 20</span>
         </div>
-        <div class="bar-track"><div class="bar-fill" style="width:0%;background:var(--teal);"></div></div>
+        <div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--teal);"></div></div>
       </div>
 
       <!-- 4. Sales/mo milestone bar -->
@@ -322,8 +307,8 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
           </span>
         </div>
         <div class="bar-track" style="position:relative;">
-          <div class="bar-fill" style="width:100%;background:var(--orange);"></div>
-          <div style="position:absolute;top:0;left:50%;width:2px;height:6px;background:rgba(255,255,255,.25);"></div>
+          <div class="bar-fill" style="width:3%;background:var(--orange);"></div>
+          <div style="position:absolute;top:0;left:50%;width:2px;height:6px;background:rgba(0,0,0,.35);"></div>
         </div>
         <div style="display:flex;justify-content:space-between;margin-top:5px;position:relative;">
           <span style="font-size:11px;color:rgba(255,255,255,.85);font-weight:500;position:absolute;left:50%;transform:translateX(-50%);">$500</span>
@@ -334,7 +319,29 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
       <!-- Amazon Ads pill -->
       <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;">
         <span class="bar-lbl tip" style="font-size:12px;position:relative;cursor:default;">Amazon Ads <span class="tip-q" style="border-color:rgba(244,116,33,.5);color:var(--orange);font-size:9px;width:14px;height:14px;">?</span><span class="tip-box" style="font-weight:400;letter-spacing:0;text-transform:none;min-width:240px;">Amazon Ads increase your book&rsquo;s visibility in search results and on competitor pages. We recommend activating ads once your listing is fully optimised and you have at least 15 reviews. Running ads before those foundations are in place wastes budget.</span></span>
-        <span style="font-size:12px;color:rgba(255,255,255,.4);font-style:italic;">Not active</span>
+        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;background:rgba(220,50,50,.15);border:1px solid rgba(220,50,50,.35);color:#f47171;"><span style="width:7px;height:7px;border-radius:50%;background:#f47171;display:inline-block;"></span>Not active</span>
+      </div>
+      <!-- BSR inside score panel -->
+      <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#F47421;margin-bottom:12px;">Best Seller Rank</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px;">
+          <div style="background:rgba(255,255,255,.07);border-radius:6px;padding:10px;text-align:center;">
+            <div style="font-size:9px;color:rgba(255,255,255,.5);margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;">Your BSR</div>
+            <div style="font-size:15px;font-weight:800;color:#fff;">2,540,924</div>
+            <div style="margin-top:6px;font-size:9px;font-weight:700;background:rgba(220,50,50,.15);border:1px solid rgba(220,50,50,.35);color:#f47171;padding:2px 8px;border-radius:20px;display:inline-block;">Needs Visibility</div>
+          </div>
+          <div style="background:rgba(255,255,255,.07);border-radius:6px;padding:10px;text-align:center;">
+            <div style="font-size:9px;color:rgba(255,255,255,.5);margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;">Niche Average</div>
+            <div style="font-size:15px;font-weight:800;color:#fff;">2,376,278</div>
+            <div style="margin-top:6px;font-size:9px;font-weight:700;background:rgba(244,116,33,.12);border:1px solid rgba(244,116,33,.3);color:#F47421;padding:2px 8px;border-radius:20px;display:inline-block;">Similar Level</div>
+          </div>
+          <div style="background:rgba(255,255,255,.07);border-radius:6px;padding:10px;text-align:center;">
+            <div style="font-size:9px;color:rgba(255,255,255,.5);margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;">Top Competitor</div>
+            <div style="font-size:15px;font-weight:800;color:#00B5AD;">178,595</div>
+            <div style="margin-top:6px;font-size:9px;font-weight:700;background:rgba(0,181,173,.12);border:1px solid rgba(0,181,173,.3);color:#00B5AD;padding:2px 8px;border-radius:20px;display:inline-block;">Target</div>
+          </div>
+        </div>
+        <div style="font-size:10px;color:rgba(255,255,255,.4);line-height:1.5;">A lower BSR means more sales. The top competitor sits at 178,595. The gap is closeable with keyword loading and a $5/day ad campaign.</div>
       </div>
     </div>
   </div>
@@ -342,16 +349,16 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
   <div style="display:flex;flex-direction:column;gap:20px;">
     <div class="card">
       <div class="card-hdr">Book Summary</div>
-      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:20px;"><em><strong style="font-style:italic;font-weight:400;">Hurricane Helene: Resiliency After the Storm Part One</strong> documents the real experiences of survivors before, during, and after the storm struck Western North Carolina on September 27, 2024. Built on original research and months of interviews, it captures what living through this disaster actually felt like. A portion of all proceeds goes directly to victims.</em><br><br><strong>Searches for &ldquo;hurricane helene book&rdquo; are finding a low-competition niche with real demand. Fewer than 20 books compete directly for that keyword and the top competitor has just 14 reviews. The barrier to entry is unusually low.</strong></p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:20px;"><em><strong style="font-style:italic;font-weight:400;">Hurricane Helene: Resiliency After the Storm Part One</strong> documents the real experiences of survivors before, during, and after the storm struck Western North Carolina on September 27, 2024. Built on original research and months of interviews, it captures what living through this disaster actually felt like. A portion of all proceeds goes directly to victims.</em><br><br><strong>Searches for &ldquo;hurricane helene book&rdquo; are finding a low-competition niche with real demand. Fewer than 20 books compete directly for that keyword and the top competitor has just 15 reviews. The barrier to entry is unusually low.</strong></p>
       <div class="stat-strip">
         <div class="stat-cell"><div class="stat-v">10+</div><div class="stat-l">Books Selling Well In This Niche</div><div><span style="display:inline-block;margin-top:6px;font-size:11px;background:#e0f7f4;color:#007A75;padding:2px 12px;border-radius:20px;font-weight:700;">✓ Low Competition</span></div></div>
-        <div class="stat-cell"><div class="stat-v">~$4.5K</div><div class="stat-l">KDP Niche Revenue</div><div><span style="display:inline-block;margin-top:6px;font-size:11px;background:#e0f7f4;color:#007A75;padding:2px 12px;border-radius:20px;font-weight:700;">✓ Real Demand</span></div></div>
+        <div class="stat-cell"><div class="stat-v">~$1.2K</div><div class="stat-l">KDP Niche Revenue</div><div><span style="display:inline-block;margin-top:6px;font-size:11px;background:#e0f7f4;color:#007A75;padding:2px 12px;border-radius:20px;font-weight:700;">✓ Real Demand</span></div></div>
         <div class="stat-cell"><div class="stat-v">Nonfiction</div><div class="stat-l">Content Type</div><div><span style="display:inline-block;margin-top:6px;font-size:11px;background:#e0f7f4;color:#007A75;padding:2px 12px;border-radius:20px;font-weight:700;">✓ Stays Relevant</span></div></div>
       </div>
     </div>
     <div class="card">
       <div class="card-hdr">Professional Assessment</div>
-      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:14px;">Buyers searching for &ldquo;hurricane helene book&rdquo; on Amazon are finding a niche with real demand and almost no competition. The top competing title has just 14 reviews and is generating an estimated $1,028 per month. Your five-star average across 18 reviews confirms that readers who find your book respond strongly to it.<br><br>The challenge is not quality. It is visibility. Your keyword fields need loading, and a modest ad campaign would put your book in front of buyers who are already searching for it. Full keyword loading and a $5 per day auto campaign could shift your performance within weeks.</p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:14px;">Buyers searching for &ldquo;hurricane helene book&rdquo; on Amazon are finding a niche with real demand and almost no competition. The top competing title has just 14 reviews and is generating an estimated $504 per month. Your five-star average across 18 reviews confirms that readers who find your book respond strongly to it.<br><br>The challenge is not quality. It is visibility. Your keyword fields need loading, and a modest ad campaign would put your book in front of buyers who are already searching for it. Full keyword loading and a $5 per day auto campaign could shift your performance within weeks.</p>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
         <span class="badge b-teal">5-Star Rating</span>
         <span class="badge b-teal">Three Formats Live</span>
@@ -366,13 +373,14 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
   </div>
 </div>
 
+
 <!-- KEY FINDING BANNER -->
 <div class="banner mb">
   <h3 style="color:var(--orange);">Low Competition, Real Demand: A Winnable Niche</h3>
-  <p style="color:#fff;">Fewer than 20 books compete directly for &ldquo;hurricane helene book&rdquo; on Amazon, and the top competitor has just 14 reviews. This is a genuinely low-competition niche with real buyer demand. The keyword is under-contested for its search volume. Loading it into your KDP account is the single highest-impact free action available to this book right now.</p>
+  <p style="color:#fff;">Fewer than 20 books compete directly for &ldquo;hurricane helene book&rdquo; on Amazon, and the top competitor has just 15 reviews. This is a genuinely low-competition niche with real buyer demand. The keyword is under-contested for its search volume. Loading it into your KDP account is the single highest-impact free action available to this book right now.</p>
   <div>
-    <span class="banner-stat">Top Competitor: 14 Reviews</span>
-    <span class="banner-stat">Niche Revenue: ~$4.5K/mo</span>
+    <span class="banner-stat">Top Competitor: 15 Reviews</span>
+    <span class="banner-stat">Niche Revenue: ~$1.2K/mo</span>
     <span class="banner-stat">Primary Keyword: Low Competition</span>
   </div>
 </div>
@@ -422,7 +430,7 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
     <div class="item-icon icon-orange">&#10003;</div>
     <div>
       <div class="item-t">Focus on the top two performers</div>
-      <div class="item-b"><em>A River Runs Through It: The Story of Hurricane Helene, Chimney Rock, NC</em> (BSR 85,957) and <em>Mountain Tsunami II: True Flood Stories of Hurricane Helene&rsquo;s Historic Havoc</em> (BSR 127,371) are the two books earning the most consistently. Both are priced at $17 to $18. Study their covers, descriptions, and category selections carefully.</div>
+      <div class="item-b"><em>A River Runs Through It: The Story of Hurricane Helene, Chimney Rock, NC</em> (BSR 178,595) and <em>Mountain Tsunami II: True Flood Stories of Hurricane Helene&rsquo;s Historic Havoc</em> (BSR 632,333) are the two books earning the most consistently. Both are priced at $17 to $18. Study their covers, descriptions, and category selections carefully.</div>
     </div>
   </div>
   <div class="item">
@@ -578,10 +586,10 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
   <div class="g2" style="gap:32px;align-items:start;">
     <div>
       <div class="card-hdr">Hurricane Helene Niche: A Winnable Market</div>
-      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:14px;">The key competitive signal in this niche: the top book has just 14 reviews at BSR 85,957. In most Amazon niches, breaking into the top tier requires hundreds of reviews. Here it requires fewer than 20. That is an unusually low barrier and it makes this niche winnable with focused effort.</p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:14px;">The key competitive signal in this niche: the top book has just 14 reviews at BSR 178,595. In most Amazon niches, breaking into the top tier requires hundreds of reviews. Here it requires fewer than 20. That is an unusually low barrier and it makes this niche winnable with focused effort.</p>
       <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:14px;">Rebecca&rsquo;s content is strong enough to compete at this level. The five-star average across 18 reviews confirms that readers who find this book respond to it. The issues are price, keyword visibility, and the absence of a paid traffic campaign.</p>
       <div class="callout">
-        <strong>The opportunity:</strong> full keyword loading and a $5 per day auto campaign could bring this book into the top performers in the niche within 60 days. The top competitor has 14 reviews. Rebecca has 18. The content is ready. The listing needs loading.
+        <strong>The opportunity:</strong> full keyword loading and a $5 per day auto campaign could bring this book into the top performers in the niche within 60 days. The top competitor has 15 reviews. Rebecca has 18. The content is ready. The listing needs loading.
       </div>
     </div>
     <div>
@@ -589,11 +597,11 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
       <table style="margin-bottom:12px;">
         <thead><tr><th>Book</th><th class="tc">BSR</th><th class="tr">Rev / Mo</th><th class="tc">Reviews</th></tr></thead>
         <tbody>
-          <tr><td>A River Runs Through It: The Story of Hurricane Helene, Chimney Rock, NC</td><td class="tc">85,957</td><td class="tr">$1,028/mo</td><td class="tc">14</td></tr>
-          <tr><td>Mountain Tsunami II: True Flood Stories of Hurricane Helene&rsquo;s Historic Havoc</td><td class="tc">127,371</td><td class="tr">$684/mo</td><td class="tc">16</td></tr>
-          <tr><td>The Deep End of Hope in the Wake of Hurricane Helene</td><td class="tc">150,295</td><td class="tr">$736/mo</td><td class="tc">58</td></tr>
-          <tr><td>Stronger Than The Storm: Hurricane Helene in Western North Carolina</td><td class="tc">323,077</td><td class="tr">$243/mo</td><td class="tc">12</td></tr>
-          <tr><td>The Day The Mountains Cried</td><td class="tc">531,144</td><td class="tr">$153/mo</td><td class="tc">266</td></tr>
+          <tr><td>A River Runs Through It: The Story of Hurricane Helene, Chimney Rock, NC</td><td class="tc">178,595</td><td class="tr">$504/mo</td><td class="tc">15</td></tr>
+          <tr><td>The Day The Mountains Cried</td><td class="tc">331,373</td><td class="tr">$254/mo</td><td class="tc">267</td></tr>
+          <tr><td>Mountain Tsunami II: True Flood Stories of Hurricane Helene&rsquo;s Historic Havoc</td><td class="tc">632,333</td><td class="tr">$125/mo</td><td class="tc">16</td></tr>
+          <tr><td>Stronger Than The Storm: Hurricane Helene in Western North Carolina</td><td class="tc">640,940</td><td class="tr">$103/mo</td><td class="tc">12</td></tr>
+          <tr><td>The Deep End of Hope in the Wake of Hurricane Helene</td><td class="tc">698,359</td><td class="tr">$160/mo</td><td class="tc">58</td></tr>
         </tbody>
       </table>
       <p style="font-size:10px;color:var(--muted);font-style:italic;">BSR and revenue estimates based on research at time of audit. Revenue calculated using standard KDP BSR-to-sales benchmarks. All prices are paperback unless otherwise noted.</p>
@@ -640,75 +648,62 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
 <!-- ADS + KEYWORDS -->
 <div id="keywords" style="position:relative;top:-48px;"></div>
 <div class="sec-label">Keywords</div>
-<div class="g2 mb">
-  <div class="card">
-    <div class="card-hdr">Amazon Paid Advertising Opportunity</div>
-    <div class="callout" style="margin-bottom:18px;">
-      <strong>Low competition = low cost-per-click.</strong> A review of sponsored posts in your book niche on Amazon found limited activity, suggesting low advertiser competition. This means you can reach high-demand, actively searched keywords at a lower cost per click than in more crowded niches.
+<div class="callout mb" style="margin-bottom:20px;">
+  <strong>Amazon keyword research for &ldquo;hurricane helene book&rdquo; and the disaster nonfiction niche.</strong> Low advertiser competition found. The niche is under-contested for its search volume. Load these keywords into your KDP fields immediately. Click <strong>+ Add</strong> to save to your list.
+</div>
+<div class="kw-tool">
+  <div class="kw-panel">
+    <div class="kw-panel-hdr">
+      <span><i class="ti ti-brand-amazon" style="margin-right:6px;font-size:14px;vertical-align:middle;"></i>Amazon Keywords</span>
+      <span class="kw-count" id="amazon-count">11</span>
     </div>
-    <div class="callout callout-orange" style="margin-bottom:18px;">
-      <strong>Load your keywords before you run ads.</strong> If your KDP keyword fields are not fully loaded, you are paying for visibility you could get for free. Load &ldquo;hurricane helene book&rdquo; and the supporting terms from this audit first. Then build reviews. Then launch ads.
+    <div class="kw-search">
+      <input type="text" id="amazon-search" placeholder="Search keywords&hellip;" oninput="filterTable('amazon-tbody','amazon-count',this.value)">
     </div>
-    <div class="item">
-      <div class="item-icon icon-orange">1</div>
-      <div>
-        <div class="item-t">Start with Sponsored Ads on automatic</div>
-        <div class="item-b">When you first set up an ad campaign, choose the automatic targeting option. This lets Amazon decide which searches to show your book for, based on its own data. It is the easiest place to start and quickly shows you which keywords are actually getting clicks and sales. Run it for two to four weeks on a budget of $5 to $10 per day before making any changes.</div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="item-icon icon-orange">2</div>
-      <div>
-        <div class="item-t">Add manual campaigns after 4 weeks</div>
-        <div class="item-b">After four weeks of auto data, build a manual campaign targeting &ldquo;hurricane helene book&rdquo; as exact match. Add phrase match for supporting terms including &ldquo;hurricane survivor memoir,&rdquo; &ldquo;Western North Carolina disaster,&rdquo; and &ldquo;natural disaster memoir.&rdquo; Pause any auto campaign term that spent without converting.</div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="item-icon icon-orange">3</div>
-      <div>
-        <div class="item-t">Target 30&ndash;40% Advertising Cost of Sale (ACoS)</div>
-        <div class="item-b">In a low-competition niche, this is very achievable and profitable. Monitor weekly and optimise bids against top-converting keywords.</div>
-      </div>
+    <div style="overflow-x:auto;">
+      <table class="kw-table">
+        <thead><tr><th>Keyword</th><th class="tr">Volume</th><th class="tc">Status</th><th></th></tr></thead>
+        <tbody id="amazon-tbody">
+          <tr><td class="kw-word">hurricane helene book</td><td class="tr kw-vol">1,740</td><td class="tc"><span class="comp-high">Priority</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">hurricane survivor memoir</td><td class="tr kw-vol">-</td><td class="tc"><span class="comp-high">Priority</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">Western North Carolina disaster</td><td class="tr kw-vol">-</td><td class="tc"><span class="comp-high">Priority</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">natural disaster memoir</td><td class="tr kw-vol">-</td><td class="tc"><span class="comp-med">Use</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">Appalachian flood stories</td><td class="tr kw-vol">-</td><td class="tc"><span class="comp-med">Use</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">books on resilience for women</td><td class="tr kw-vol">1,275</td><td class="tc"><span class="comp-med">Evergreen</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">inspirational true stories books</td><td class="tr kw-vol">-</td><td class="tc"><span class="comp-med">Evergreen</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">disaster recovery stories</td><td class="tr kw-vol">-</td><td class="tc"><span class="comp-low">Evergreen</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">community resilience book</td><td class="tr kw-vol">-</td><td class="tc"><span class="comp-low">Evergreen</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">true survival stories book</td><td class="tr kw-vol">-</td><td class="tc"><span class="comp-low">Evergreen</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">storm survivor true account</td><td class="tr kw-vol">-</td><td class="tc"><span class="comp-low">Evergreen</span></td><td><button class="kw-add">+ Add</button></td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-hdr">Keyword Strategy: Existing Book</div>
-    <p style="font-size:12px;color:var(--mid);margin-bottom:14px;">These are your recommended keywords to enter directly into the keyword fields inside your KDP account. Amazon gives you 7 fields. Use every one. The right keywords help your book appear in searches it would otherwise never show up in, giving you free, ongoing visibility without spending on ads.</p>
-    <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px;">Priority Targets: Low Competition</p>
-    <div style="margin-bottom:14px;">
-      <span class="kw">hurricane helene book</span>
-      <span class="kw">hurricane survivor memoir</span>
-      <span class="kw">Western North Carolina disaster</span>
-      <span class="kw">natural disaster memoir</span>
-      <span class="kw">Appalachian flood stories</span>
+  <div class="kw-panel">
+    <div class="kw-panel-hdr rec">
+      <span><div style="display:inline-block;width:66px;height:66px;overflow:hidden;vertical-align:middle;margin-right:10px;flex-shrink:0;border-radius:50%;"><img src="logo3.png" style="width:66px;height:auto;display:block;"></div>Readabull Recommended Keywords</span>
+      <span class="kw-count" id="rec-count">7</span>
     </div>
-    <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px;">Resilience and Evergreen Keywords</p>
-    <div style="margin-bottom:14px;">
-      <span class="kw">books on resilience for women</span>
-      <span class="kw">inspirational true stories books</span>
-      <span class="kw">disaster recovery stories</span>
-      <span class="kw">community resilience book</span>
-      <span class="kw">true survival stories book</span>
-      <span class="kw">storm survivor true account</span>
+    <div class="kw-search">
+      <input type="text" id="rec-search" placeholder="Filter recommendations&hellip;" oninput="filterTable('rec-tbody','rec-count',this.value)">
     </div>
-    <p style="font-size:10px;color:var(--muted);font-style:italic;">Focus on low competition, high demand keywords. Validate all volumes in BookBolt before committing to any paid campaign.</p>
-
-    <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--border);">
-      <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px;">Self-Assessment Signals</p>
-      <table>
-        <thead><tr><th>Signal</th><th class="tc">Status</th></tr></thead>
-        <tbody>
-          <tr><td>Book title includes core keyword</td><td class="tc">&#10003; Yes</td></tr>
-          <tr><td>Subtitle reinforces keyword theme</td><td class="tc">&#10003; Yes</td></tr>
-          <tr><td>7 backend keyword fields fully loaded</td><td class="tc">&#9998; Needs Loading</td></tr>
-          <tr><td>Description uses &ldquo;hurricane helene&rdquo; naturally</td><td class="tc">&#9998; Verify</td></tr>
-          <tr><td>Category optimised for resilience / history</td><td class="tc">&#9998; Verify</td></tr>
-          <tr><td>A+ Content live</td><td class="tc">&#10003; Confirmed</td></tr>
-          <tr><td>All formats on single listing</td><td class="tc">&#10003; Confirmed</td></tr>
-          <tr><td>Price competitive with niche ($17 to $23 range)</td><td class="tc">&#9888; Action Required</td></tr>
+    <div style="overflow-x:auto;">
+      <table class="kw-table">
+        <thead><tr><th>Keyword</th><th class="tr">Volume</th><th class="tc">Status</th><th></th></tr></thead>
+        <tbody id="rec-tbody">
+          <tr><td class="kw-word">hurricane helene book</td><td class="tr kw-vol">1,740</td><td class="tc"><span class="comp-high">Priority</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">hurricane survivor memoir</td><td class="tr kw-vol">-</td><td class="tc"><span class="comp-high">Priority</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">Western North Carolina disaster</td><td class="tr kw-vol">-</td><td class="tc"><span class="comp-high">Priority</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">natural disaster memoir</td><td class="tr kw-vol">-</td><td class="tc"><span class="comp-med">Best Fit</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">books on resilience for women</td><td class="tr kw-vol">1,275</td><td class="tc"><span class="comp-med">Best Fit</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">inspirational true stories books</td><td class="tr kw-vol">-</td><td class="tc"><span class="comp-med">Best Fit</span></td><td><button class="kw-add">+ Add</button></td></tr>
+          <tr><td class="kw-word">Appalachian flood stories</td><td class="tr kw-vol">-</td><td class="tc"><span class="comp-low">Best Fit</span></td><td><button class="kw-add">+ Add</button></td></tr>
         </tbody>
       </table>
+    </div>
+    <div style="padding:12px 14px;border-top:1px solid var(--border);font-size:10px;color:var(--muted);line-height:1.5;">
+      Volumes from BookBolt. Low advertiser competition across all terms.
     </div>
   </div>
 </div>
@@ -763,44 +758,28 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
 </div>
 
 </div><!-- /wrap -->
+</div><!-- /main -->
 
 <div class="ftr">
   Book Opportunity Audit &nbsp;&middot;&nbsp; Hurricane Helene: Resiliency After The Storm Part One &nbsp;&middot;&nbsp; June 2026 &nbsp;&middot;&nbsp; Confidential
 </div>
 
 <script>
-(function() {
-  var nav = document.querySelector('nav.site-nav');
-  if (!nav) return;
-  var navLinks = Array.from(nav.querySelectorAll('a[href^="#"]'));
-  var sectionIds = navLinks.map(function(a) { return a.getAttribute('href').slice(1); }).filter(Boolean);
-  // Sort by DOM position so scroll-spy iterates sections in page order
-  var domOrderIds = sectionIds.filter(function(id) { return document.getElementById(id); });
-  domOrderIds.sort(function(a, b) {
-    return document.getElementById(a).offsetTop - document.getElementById(b).offsetTop;
-  });
-  function getActiveId() {
-    var scrollY = window.scrollY + 150;
-    var active = domOrderIds[0];
-    domOrderIds.forEach(function(id) {
-      var el = document.getElementById(id);
-      if (el && el.getBoundingClientRect().top + window.scrollY <= scrollY) active = id;
-    });
-    return active;
-  }
-  function setActive(id) {
-    navLinks.forEach(function(a) { a.classList.remove('active'); });
-    var activeLink = nav.querySelector('a[href="#' + id + '"]');
-    if (activeLink) activeLink.classList.add('active');
-  }
-  document.addEventListener('DOMContentLoaded', function() { setActive(getActiveId()); });
-  var ticking = false;
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      window.requestAnimationFrame(function() { setActive(getActiveId()); ticking = false; });
-      ticking = true;
-    }
-  });
+function toggleSidebar(){var s=document.getElementById('sidebar'),o=document.getElementById('mob-overlay');s.classList.toggle('open');o.classList.toggle('open');}
+function filterTable(tbodyId,countId,query){var tbody=document.getElementById(tbodyId),countEl=document.getElementById(countId),rows=tbody.querySelectorAll('tr'),q=query.toLowerCase(),visible=0;rows.forEach(function(row){var text=row.querySelector('.kw-word').textContent.toLowerCase(),show=text.indexOf(q)!==-1;row.style.display=show?'':'none';if(show)visible++;});countEl.textContent=visible;}
+window.addEventListener('scroll',function(){var btn=document.querySelector('.scroll-top');if(btn)btn.classList.toggle('visible',window.scrollY>300);});
+(function(){
+  var nav=document.querySelector('nav.sb-nav');
+  if(!nav)return;
+  var navLinks=Array.from(nav.querySelectorAll('a[href^="#"]'));
+  var sectionIds=navLinks.map(function(a){return a.getAttribute('href').slice(1);}).filter(Boolean);
+  var domOrderIds=sectionIds.filter(function(id){return document.getElementById(id);});
+  domOrderIds.sort(function(a,b){return document.getElementById(a).offsetTop-document.getElementById(b).offsetTop;});
+  function getActiveId(){var scrollY=window.scrollY+150,active=domOrderIds[0];domOrderIds.forEach(function(id){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top+window.scrollY<=scrollY)active=id;});return active;}
+  function setActive(id){navLinks.forEach(function(a){a.classList.remove('active');});var al=nav.querySelector('a[href="#'+id+'"]');if(al)al.classList.add('active');}
+  document.addEventListener('DOMContentLoaded',function(){setActive(getActiveId());});
+  var ticking=false;
+  window.addEventListener('scroll',function(){if(!ticking){window.requestAnimationFrame(function(){setActive(getActiveId());ticking=false;});ticking=true;}});
 })();
 </script>
 </body>
