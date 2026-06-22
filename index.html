@@ -267,9 +267,9 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
   <div class="score-panel">
     <div style="display:flex;gap:24px;align-items:center;margin-bottom:20px;">
       <div style="flex:1;min-width:0;">
-        <div class="score-eyebrow tip" style="position:relative;display:inline-flex;align-items:center;gap:8px;cursor:default;">Author Opportunity Score <span class="tip-q" style="border-color:rgba(244,116,33,.5);color:var(--orange);">?</span><span class="tip-box" style="font-weight:400;letter-spacing:0;text-transform:none;">Your book&rsquo;s current discoverability across four key factors Amazon uses to surface books to buyers: listing optimisation, Best Seller Rank vs niche average, review count, and pricing vs niche. Each factor is scored and combined to give a total out of 100.</span></div>
-        <div><span class="score-num">50</span><span class="score-denom">&thinsp;/ 100</span></div>
-        <div class="score-range tip" style="font-weight:400;background:rgba(0,181,173,.12);border:1px solid rgba(0,181,173,.3);position:relative;display:inline-flex;align-items:center;gap:6px;cursor:default;">Early Stage <span class="tip-q" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7);font-size:9px;width:14px;height:14px;">?</span><span class="tip-box" style="font-weight:400;letter-spacing:0;text-transform:none;left:0;right:auto;min-width:220px;">Early Stage: 26–50 points. Your book is visible but not yet competitive. Building reviews and running a small ads campaign are the two highest-impact moves. Reach 51 points to hit Building Momentum.</span></div>
+        <div class="score-eyebrow tip" style="position:relative;display:inline-flex;align-items:center;gap:8px;cursor:default;">Author Opportunity Score <span class="tip-q" style="border-color:rgba(244,116,33,.5);color:var(--orange);">?</span><span class="tip-box" style="font-weight:400;letter-spacing:0;text-transform:none;">Your book&rsquo;s current discoverability across five key factors: listing optimisation, monthly sales, review count, star rating, and pricing vs niche. Each factor is scored out of 20, giving a total out of 100.</span></div>
+        <div><span class="score-num">59</span><span class="score-denom">&thinsp;/ 100</span></div>
+        <div class="score-range tip" style="font-weight:400;background:rgba(0,181,173,.12);border:1px solid rgba(0,181,173,.3);position:relative;display:inline-flex;align-items:center;gap:6px;cursor:default;">Building Momentum <span class="tip-q" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7);font-size:9px;width:14px;height:14px;">?</span><span class="tip-box" style="font-weight:400;letter-spacing:0;text-transform:none;left:0;right:auto;min-width:220px;">Building Momentum: 51–70 points. Your book is picking up traction. Amazon Ads will work well now — activate them if you haven't already. Push for 30+ reviews to reach Strong Presence.</span></div>
           <div style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.5);">Sales/mo <span style="color:rgba(255,255,255,.85);font-weight:700;">~$1,028</span> <span style="color:var(--orange);font-size:14px;">&#8593;</span></div>
       </div>
       <div style="flex-shrink:0;">
@@ -298,25 +298,33 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
         <div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--teal);"></div></div>
       </div>
 
-      <!-- 2. BSR vs Avg BSR /25 -->
-      <div class="bar-item">
-        <div class="bar-meta">
-          <span class="bar-lbl tip">BSR vs Avg BSR <span class="tip-q">i</span>
-            <span class="tip-box">
-              <div class="tt-title">BSR vs Avg BSR &middot; 11/20</div>
-              Your book is in the mid-tier of this niche. The top competitor is at BSR 85,957 earning $1,028/mo. Reviews and ads will move you up.
-              <div class="tt-scale">
-                <div class="tt-row"><span>20/20</span><span>BSR 50%+ better than niche average</span></div>
-                <div class="tt-row"><span>14/20</span><span>BSR 20&ndash;49% better</span></div>
-                <div class="tt-row"><span>10/20</span><span>Equal to niche average</span></div>
-                <div class="tt-row"><span>5/20</span><span>BSR 20&ndash;49% worse</span></div>
-                <div class="tt-row"><span>0/20</span><span>BSR 50%+ worse or unranked</span></div>
-              </div>
             </span>
           </span>
           <span class="bar-val">11 / 20</span>
         </div>
         <div class="bar-track"><div class="bar-fill" style="width:55%;background:var(--teal);"></div></div>
+      </div>
+
+      <!-- 2. Sales/mo /20 -->
+      <div class="bar-item">
+        <div class="bar-meta">
+          <span class="bar-lbl tip">Sales/mo <span class="tip-q">i</span>
+            <span class="tip-box">
+              <div class="tt-title">Sales/mo &middot; 20/20</div>
+              Approximately $1,028 per month from KDP royalties. Your book is already generating real revenue — ads will amplify this further.
+              <div class="tt-scale">
+                <div class="tt-row"><span>20/20</span><span>£/$500+ per month</span></div>
+                <div class="tt-row"><span>15/20</span><span>£/$200–£/$499 per month</span></div>
+                <div class="tt-row"><span>10/20</span><span>£/$50–£/$199 per month</span></div>
+                <div class="tt-row"><span>5/20</span><span>£/$10–£/$49 per month</span></div>
+                <div class="tt-row"><span>2/20</span><span>£/$1–£/$9 per month</span></div>
+                <div class="tt-row"><span>0/20</span><span>£/$0 or unknown</span></div>
+              </div>
+            </span>
+          </span>
+          <span class="bar-val">20 / 20</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--teal);"></div></div>
       </div>
 
       <!-- 3. Reviews /25 -->
@@ -344,6 +352,27 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
         <div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--teal);"></div></div>
       </div>
 
+      <!-- 3b. Star Rating /20 -->
+      <div class="bar-item">
+        <div class="bar-meta">
+          <span class="bar-lbl tip">Star Rating <span class="tip-q">i</span>
+            <span class="tip-box">
+              <div class="tt-title">Star Rating &middot; Unrated</div>
+              Star rating not yet confirmed. Update this once your Amazon listing shows an average rating.
+              <div class="tt-scale">
+                <div class="tt-row"><span>20/20</span><span>4.5 &ndash; 5.0 &#9733;</span></div>
+                <div class="tt-row"><span>16/20</span><span>4.0 &ndash; 4.4 &#9733;</span></div>
+                <div class="tt-row"><span>10/20</span><span>3.5 &ndash; 3.9 &#9733;</span></div>
+                <div class="tt-row"><span>5/20</span><span>3.0 &ndash; 3.4 &#9733;</span></div>
+                <div class="tt-row"><span>0/20</span><span>Below 3.0 or unrated</span></div>
+              </div>
+            </span>
+          </span>
+          <span class="bar-val">Unrated</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill" style="width:0%;background:var(--orange);"></div></div>
+      </div>
+
       <!-- 4. Price vs Niche /15 -->
       <div class="bar-item">
         <div class="bar-meta">
@@ -365,10 +394,9 @@ INSTRUCTIONS FOR CLAUDE — READ BEFORE FILLING ANY PLACEHOLDER:
 
       <!-- Amazon Ads pill -->
       <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;">
-        <span class="bar-lbl" style="font-size:12px;">Amazon Ads</span>
-        <span style="font-size:11px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;padding:4px 12px;border-radius:20px;background:rgba(244,116,33,.12);border:1px solid rgba(244,116,33,.35);color:var(--orange);">Not Active</span>
+        <span class="bar-lbl tip" style="font-size:12px;position:relative;cursor:default;">Amazon Ads <span class="tip-q" style="border-color:rgba(244,116,33,.5);color:var(--orange);font-size:9px;width:14px;height:14px;">?</span><span class="tip-box" style="font-weight:400;letter-spacing:0;text-transform:none;min-width:240px;">Amazon Ads maximise your book&rsquo;s visibility and are separate from your Discoverability Score. We recommend activating ads once you reach Early Stage (26+ points) and have at least 15 reviews. Running ads before your listing and reviews are strong wastes budget. Check your tier badge to see when ads are recommended for your book.</span></span>
+        <span style="font-size:12px;color:rgba(255,255,255,.4);font-style:italic;">Not active</span>
       </div>
-
     </div>
   </div>
 
